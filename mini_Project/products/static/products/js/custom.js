@@ -183,7 +183,47 @@ tpj(document).ready(function() {
             }
         });
     }
+
 });
+
+// script.js
+$(document).ready(function() {  
+    $('#cartModal').modal('show');
+  });
+
+
+$(document).ready(function () {
+    $(document).on("click", ".addToCart", function (e) {
+        var prod_name = $(this).closest(".product_list").find(".prod_name").text();
+        var prod_price = $(this).closest(".product_detail_btm").find(".prod_price").text();
+        var prod_img = $(this).closest(".product_list").find(".prod_img").attr("src");
+        addToCart({"prod_name": prod_name, "prod_price": prod_price, "prod_img_url": prod_img })
+        console.log("prod name: " + prod_name + " prod_price: " + prod_price + " prod img: " + prod_img);
+    })
+
+    $("#cart-icon").click(function () {
+        // const is_empty = $("#modalCart .modal-body").children().length === 0
+        console.log("empty? ",  $(".cart-body").children().length)
+        if ($(".cart-body").children().length === 0) {
+            console.log("im empty")
+            $(".table-hover").append(`<td class="emptycart_text" colspan="4"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
+        }
+        else {
+            $(".emptycart_text").remove()
+        }
+     })
+});
+
+function addToCart(product){
+    $(".cart-body").append(`<tr>
+    <td class="w-25"><img class="img-fluid w-75" src="${product.prod_img_url}" alt=""></td>
+    <th scope="row">${product.prod_name}</th>
+    <td>${product.prod_price}</td>
+    <td class='d-flex'><button type="button" class="close" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button></td>
+  </tr>`)
+}
 
 /**===== End slider =====**/
 	
