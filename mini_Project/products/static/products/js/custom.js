@@ -195,8 +195,8 @@ function isEmpty() {
     return $(".cart-body").children().length === 0
 }
 
+var itemCount = 0;
   $(document).ready(function () {
-      var itemCount = 0;
       $(document).on("click", ".addToCart", function (e) {
           var prod_name = $(this).closest(".product_list").find(".prod_name").text();
         var prod_price = $(this).closest(".product_detail_btm").find(".prod_price").text();
@@ -213,17 +213,37 @@ function isEmpty() {
         console.log("empty? ",  $(".cart-body").children().length)
         if (isEmpty()) {
             console.log("im empty")
-            $(".table-hover").append(`<td class="emptycart_text" colspan="4"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
+            $(".table-hover").html(`
+            <thead>
+           <tr>
+             <th>#</th>
+             <th>Product name</th>
+             <th>Price</th>
+             <th>Quantity</th>
+             <th>Remove</th>
+           </tr>
+         </thead>
+         <tbody class="cart-body">
+           <!-- <tr>
+             <td><img class="img-fluid" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGljfGVufDB8fDB8fHww&w=1000&q=80" alt=""></td>
+             <th scope="row">1</th>
+             <td>100$</td>
+             <td class='d-flex'><button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button></td>
+           </tr> -->
+         </tbody>
+            <td class="emptycart_text" colspan="5"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
         }
         else {
             $(".emptycart_text").remove()
         }
     })
     
-    
+    update_total();
 });
 function cartEmptyText() {
-    $(".table-hover").append(`<td class="emptycart_text" colspan="4"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
+    $(".table-hover").append(`<td class="emptycart_text" colspan="5"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
 }
 
 function removeFromCart(e) {
@@ -231,19 +251,42 @@ function removeFromCart(e) {
     if (isEmpty()) {
         cartEmptyText()
     }
+    itemCount--
+    $("#cart-counter").text(itemCount);
+    update_total()
 
 }
 function addToCart(product, removeFromCart){
-    $(".cart-body").append(`<tr>
+    $(".cart-body").append(`<tr class="prod_info">
     <td class="w-25"><img class="img-fluid w-75" src="${product.prod_img_url}" alt=""></td>
     <th scope="row">${product.prod_name}</th>
-    <td>${product.prod_price}</td>
+    <td class="cart_prod_price">${product.prod_price}</td>
+    <td><input type="number" class="cart-quantity" name="quantity" value=1 min="1" style="width: 40px;"></td>
     <td class='d-flex'><button onClick="removeFromCart(this)" type="button" class="close" aria-label="Close">
      <span aria-hidden="true">&times;</span>
    </button></td>
   </tr>`)
+  update_total()
     
 }
+
+function update_total(e) {
+    var total = 0;
+    console.log("update?")
+    $('.prod_info').each(function() {
+        var quantity = parseInt($(this).find('.cart-quantity').val()); // 'this' refers to the input field
+        var price = parseFloat($(this).closest('.prod_info').find('.cart_prod_price').text().replace('$', ''));
+        console.log("price ?", price, " quantity: ", $(this).find('.cart-quantity').val())
+        total += quantity * price;
+      });
+      $('#total').text('$' + total.toFixed(2));
+    
+ }
+
+$(document).on('input', '.cart-quantity', function() {
+     update_total();
+  });
+  
 
 
 /**===== End slider =====**/

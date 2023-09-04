@@ -51,6 +51,7 @@ def logIn(request):
 
 def register(request):
     # CustomerForm = modelform_factory(Customer, fields=['username', 'password' ,'email', 'phone', 'address'])
+    print("authenticated? ", request.user.is_authenticated)
     if request.method == 'POST':
         form = CustomerForm(request.POST)
         if form.is_valid():

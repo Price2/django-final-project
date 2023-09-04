@@ -191,6 +191,7 @@
              <th>#</th>
              <th>Product name</th>
              <th>Price</th>
+             <th>Quantity</th>
              <th>Remove</th>
            </tr>
          </thead>
@@ -209,9 +210,14 @@
 
      </div>
      <!--Footer-->
-     <div class="modal-footer">
-       <button class="btn btn-primary">Checkout</button>
-       <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+     <div class="modal-footer justify-content-between align-items-center">
+        <p class="align-self-start font-weight-bold" style="color:black">Total</p>
+        <p class="align-self-end font-weight-bold" id="total" style="color:black"></p>
+
+       <div class="d-flex  w-100">
+         <button class="btn btn-primary w-100">Checkout</button>
+         <!-- <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button> -->
+       </div>
      </div>
    </div>
  </div>
