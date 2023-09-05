@@ -199,9 +199,11 @@ var itemCount = 0;
   $(document).ready(function () {
       $(document).on("click", ".addToCart", function (e) {
           var prod_name = $(this).closest(".product_list").find(".prod_name").text();
-        var prod_price = $(this).closest(".product_detail_btm").find(".prod_price").text();
-        var prod_img = $(this).closest(".product_list").find(".prod_img").attr("src");
-        
+            // var prod_price = $(this).closest(".product_detail_btm").find(".prod_price").text();
+          var prod_price = $(this).closest(".product_list").find('.prod_price').text();
+          var prod_img = $(this).closest(".product_list").find(".prod_img").attr("src");
+          
+        console.log("product price ", $(this).closest(".product_list").find('.prod_price').text()    )
         addToCart({ "prod_name": prod_name, "prod_price": prod_price, "prod_img_url": prod_img })
         itemCount++;
         $("#cart-counter").text(itemCount);

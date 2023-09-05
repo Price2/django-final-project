@@ -8,12 +8,12 @@
         <div class="row">
           {% for product in products %}
           <div class="col-md-4 col-sm-6 col-xs-12 margin_bottom_30_all ">
-            <div class="product_list h-100">
+            <div class="product_list h-100 card border-0">
               <div class="product_img">
                  <img class="img-responsive prod_img"
                   src="{{ product.image.url}}" alt>
               </div>
-              <div class="product_detail_btm">
+              <div class="product_detail_btm card-body">
                 <div class="center">
                   <h4><a href="#" class="prod_name">{{ product.name_en }}</a></h4>
                 </div>
@@ -30,9 +30,13 @@
                       class="new_price">$25.00</span></p> -->
                       <span
                       class="new_price prod_price">${{product.unit_price}}</span></p>
-                  <button class="btn btn-primary mb-4 addToCart">Add to cart</button>
-                </div>
-              </div>
+                    </div>
+                    
+                  </div>
+                  <div class="card-footer d-flex align-items-center justify-content-center border-0" style="background-color: white;">
+
+                    <button class="btn btn-primary mb-4 addToCart">Add to cart</button>
+                  </div>
             </div>
           </div>
           {% endfor %}
