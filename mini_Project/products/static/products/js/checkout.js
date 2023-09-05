@@ -4,6 +4,10 @@ var total = 0;
 var shipping = 10;
 $(document).ready(function () {
     $('#placeOrder').click(function (e) {
+       /* This code block is responsible for handling the click event on the "placeOrder" button. When
+       the button is clicked, it prevents the default form submission behavior, retrieves data from
+       the localStorage, defines the data to send in the POST request, and sends the POST request to
+       the server. */
         // e.preventDefault(); // Prevent the default form submission behavior
 
         // Retrieve data from localStorage
@@ -42,8 +46,9 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    // console.log("loaded? ", JSON.parse(localStorage.getItem('cart_prod')).length)
 
+    /* This code block is responsible for retrieving data from the local storage and displaying it on
+    the webpage. */
     if (localStorage.getItem('cart_prod')) {
         // Retrieve the data as a string from local storage
         const dataString = localStorage.getItem('cart_prod');
@@ -81,54 +86,42 @@ $(document).ready(function () {
         console.log('Data not found in local storage');
     }
 
-
-
-    // $("#placeOrder").on("click", function (e) {
-    //     e.preventDefault();
-    //     console.log("testing submit ")
-    //     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-    //     console.log("csrf? ", csrftoken)
-    //     const request = new Request(
-    //         'order/success',
-    //         {
-    //             method: 'POST',
-    //             headers: {'X-CSRFToken': csrftoken},
-    //             mode: 'same-origin' // Do not send CSRF token to another domain.
-    //         }
-    //     );
-    //   fetch(request).then(response => {
-    //     console.log("response url: " + response.url)
-    //         // Manually redirect the user to the new URL
-    //     if (response.url) {
-    //       window.location.href = response.url;
-    //     }    
-
-    //     // Handle other responses if needed
-    // })
-    // .catch(error => {
-    //     console.error('Error:', error);
-    // });
-    // })
-    
+    if (window.location.pathname === '/products/thanks') {
+      localStorage.removeItem('cart_prod');
+  }
     calc_sub_and_total()
 
 });
 
+/**
+ * The function calculates the subtotal and total prices of products based on their prices and
+ * quantities, and updates the corresponding elements in the HTML.
+ */
 function calc_sub_and_total(){
-
+  sub_total = 0; // Reset sub_total to 0 before re-calculating
   $('.prod-review').each(function () {
     console.log("checking this ")
     var review_price = parseFloat($(this).find('.prod-review-price').text().replace('$', ''))
-    sub_total += review_price
-    total = sub_total + shipping;
-   
-    $("#review-subtotal").text('$' + sub_total.toFixed(2));
-    $("#review-total").text('$' + total.toFixed(2));
-    $("#review-shipping").text('$' + shipping.toFixed(2));
+    var review_quantity = parseInt($(this).find('.prod-review-quant').text());
+    console.log("testing prices ", review_price)
+    console.log("testing quants ", review_quantity)
+    sub_total += review_price * review_quantity; 
+    
   })
+  total = sub_total + shipping;
+  console.log("?????")
+  $("#review-subtotal").text('$' + sub_total.toFixed(2));
+  $("#review-total").text('$' + total.toFixed(2));
+  $("#review-shipping").text('$' + shipping.toFixed(2));
 
 }
 
+/**
+ * The function removeFromReviewCart removes a product from the review cart, updates the subtotal and
+ * total, updates the storage, and disables the place order button if the cart is empty.
+ * @param e - The parameter "e" is likely an event object that is passed to the function when it is
+ * triggered by an event, such as a button click.
+ */
 function removeFromReviewCart(e) {
   e.closest('.prod-review').remove()
   calc_sub_and_total();
@@ -145,16 +138,28 @@ function removeFromReviewCart(e) {
 }
 
 
+/**
+ * The function checks if the element with class "checkout-review-products" has any child elements and
+ * returns true if it does not.
+ * @returns a boolean value indicating whether the ".checkout-review-products" element has any child
+ * elements or not.
+ */
 function isEmpty() {
   console.log("empty review? ", $(".checkout-review-products").children().length === 0)
   console.log("empty review? ", $(".checkout-review-products").children())
   return $(".checkout-review-products").children().length === 0
 }
 
+/**
+ * The function `cartEmptyText` appends a table cell with a message indicating that the cart is empty.
+ */
 function cartEmptyText() {
   $(".review-cart-table").append(`<td class="empty_review_cart_text" colspan="5"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
 }
 
+/**
+ * The function `update_storage` updates the localStorage with the products in the cart.
+ */
 function update_storage() {
     var products = [];
     console.log("final cart contains anything? ", products);

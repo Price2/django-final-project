@@ -25,6 +25,15 @@
         "documentation": {}
     },
     {
+        "label": "mimetypes",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mimetypes",
+        "description": "mimetypes",
+        "detail": "mimetypes",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -54,6 +63,38 @@
         "description": "django.contrib",
         "isExtraImport": true,
         "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -97,6 +138,14 @@
         "documentation": {}
     },
     {
+        "label": "handler404",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -121,6 +170,38 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -146,6 +227,78 @@
     },
     {
         "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -167,6 +320,30 @@
         "importPath": "django.db.models.deletion",
         "description": "django.db.models.deletion",
         "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "template",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "Customer",
+        "importPath": "users.models",
+        "description": "users.models",
+        "isExtraImport": true,
+        "detail": "users.models",
         "documentation": {}
     },
     {
@@ -194,6 +371,14 @@
         "documentation": {}
     },
     {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
@@ -210,7 +395,23 @@
         "documentation": {}
     },
     {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -223,6 +424,39 @@
         "description": "django.shortcuts",
         "isExtraImport": true,
         "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
         "documentation": {}
     },
     {
@@ -277,6 +511,87 @@
         "documentation": {}
     },
     {
+        "label": "phonenumber_field.modelfields",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "phonenumber_field.modelfields",
+        "description": "phonenumber_field.modelfields",
+        "detail": "phonenumber_field.modelfields",
+        "documentation": {}
+    },
+    {
+        "label": "PhoneNumberField",
+        "importPath": "phonenumber_field.modelfields",
+        "description": "phonenumber_field.modelfields",
+        "isExtraImport": true,
+        "detail": "phonenumber_field.modelfields",
+        "documentation": {}
+    },
+    {
+        "label": "PhoneNumberField",
+        "importPath": "phonenumber_field.modelfields",
+        "description": "phonenumber_field.modelfields",
+        "isExtraImport": true,
+        "detail": "phonenumber_field.modelfields",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerForm",
+        "importPath": "users.forms",
+        "description": "users.forms",
+        "isExtraImport": true,
+        "detail": "users.forms",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "importPath": "users.views",
+        "description": "users.views",
+        "isExtraImport": true,
+        "detail": "users.views",
+        "documentation": {}
+    },
+    {
+        "label": "parse",
+        "importPath": "phonenumbers",
+        "description": "phonenumbers",
+        "isExtraImport": true,
+        "detail": "phonenumbers",
+        "documentation": {}
+    },
+    {
+        "label": "format_number",
+        "importPath": "phonenumbers",
+        "description": "phonenumbers",
+        "isExtraImport": true,
+        "detail": "phonenumbers",
+        "documentation": {}
+    },
+    {
+        "label": "PhoneNumberFormat",
+        "importPath": "phonenumbers",
+        "description": "phonenumbers",
+        "isExtraImport": true,
+        "detail": "phonenumbers",
+        "documentation": {}
+    },
+    {
         "label": "UserAdmin",
         "importPath": "django.contrib.auth.admin",
         "description": "django.contrib.auth.admin",
@@ -285,11 +600,11 @@
         "documentation": {}
     },
     {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
+        "label": "ModelBackend",
+        "importPath": "django.contrib.auth.backends",
+        "description": "django.contrib.auth.backends",
         "isExtraImport": true,
-        "detail": "django",
+        "detail": "django.contrib.auth.backends",
         "documentation": {}
     },
     {
@@ -317,43 +632,11 @@
         "documentation": {}
     },
     {
-        "label": "Row",
+        "label": "Field",
         "importPath": "crispy_forms.layout",
         "description": "crispy_forms.layout",
         "isExtraImport": true,
         "detail": "crispy_forms.layout",
-        "documentation": {}
-    },
-    {
-        "label": "Column",
-        "importPath": "crispy_forms.layout",
-        "description": "crispy_forms.layout",
-        "isExtraImport": true,
-        "detail": "crispy_forms.layout",
-        "documentation": {}
-    },
-    {
-        "label": "Submit",
-        "importPath": "crispy_forms.layout",
-        "description": "crispy_forms.layout",
-        "isExtraImport": true,
-        "detail": "crispy_forms.layout",
-        "documentation": {}
-    },
-    {
-        "label": "Div",
-        "importPath": "crispy_forms.layout",
-        "description": "crispy_forms.layout",
-        "isExtraImport": true,
-        "detail": "crispy_forms.layout",
-        "documentation": {}
-    },
-    {
-        "label": "timezone",
-        "importPath": "django.utils",
-        "description": "django.utils",
-        "isExtraImport": true,
-        "detail": "django.utils",
         "documentation": {}
     },
     {
@@ -373,11 +656,52 @@
         "documentation": {}
     },
     {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
         "label": "make_password",
         "importPath": "django.contrib.auth.hashers",
         "description": "django.contrib.auth.hashers",
         "isExtraImport": true,
         "detail": "django.contrib.auth.hashers",
+        "documentation": {}
+    },
+    {
+        "label": "csrf_exempt",
+        "importPath": "django.views.decorators.csrf",
+        "description": "django.views.decorators.csrf",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.csrf",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
         "documentation": {}
     },
     {
@@ -403,7 +727,7 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
         "description": "mini_Project.mini_Project.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-0i5mt9z#89k_pyk$=*0_rz-efo^dw_ulfxf8!k0h5ihj6gtc$3'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nmimetypes.add_type(\"text/css\", \".css\", True)\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-0i5mt9z#89k_pyk$=*0_rz-efo^dw_ulfxf8!k0h5ihj6gtc$3'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition",
         "detail": "mini_Project.mini_Project.settings",
         "documentation": {}
     },
@@ -439,7 +763,7 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
         "description": "mini_Project.mini_Project.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'crispy_forms',\n    'crispy_bootstrap4',\n    'products',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'crispy_forms',\n    'crispy_bootstrap5',\n    'products',",
         "detail": "mini_Project.mini_Project.settings",
         "documentation": {}
     },
@@ -448,7 +772,7 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
         "description": "mini_Project.mini_Project.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'mini_Project.urls'",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
         "detail": "mini_Project.mini_Project.settings",
         "documentation": {}
     },
@@ -498,6 +822,24 @@
         "documentation": {}
     },
     {
+        "label": "AUTHENTICATION_BACKENDS",
+        "kind": 5,
+        "importPath": "mini_Project.mini_Project.settings",
+        "description": "mini_Project.mini_Project.settings",
+        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    'users.auth_backend.CustomerAuthenticationBackend',  # Your custom backend\n]\nLOGGING = {\n    'version': 1,\n    'disable_existing_loggers': False,\n    'handlers': {\n        'console': {\n            'level': 'DEBUG',\n            'class': 'logging.StreamHandler',",
+        "detail": "mini_Project.mini_Project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGGING",
+        "kind": 5,
+        "importPath": "mini_Project.mini_Project.settings",
+        "description": "mini_Project.mini_Project.settings",
+        "peekOfCode": "LOGGING = {\n    'version': 1,\n    'disable_existing_loggers': False,\n    'handlers': {\n        'console': {\n            'level': 'DEBUG',\n            'class': 'logging.StreamHandler',\n        },\n    },\n    'root': {",
+        "detail": "mini_Project.mini_Project.settings",
+        "documentation": {}
+    },
+    {
         "label": "LANGUAGE_CODE",
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
@@ -520,7 +862,7 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
         "description": "mini_Project.mini_Project.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL=\"users.Admin\"\nCRISPY_TEMPLATE_PACK = 'bootstrap4'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL=\"users.Admin\"\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"",
         "detail": "mini_Project.mini_Project.settings",
         "documentation": {}
     },
@@ -529,7 +871,7 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
         "description": "mini_Project.mini_Project.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL=\"users.Admin\"\nCRISPY_TEMPLATE_PACK = 'bootstrap4'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL=\"users.Admin\"\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"\nCRISPY_TEMPLATE_PACK = \"bootstrap5\"",
         "detail": "mini_Project.mini_Project.settings",
         "documentation": {}
     },
@@ -538,7 +880,7 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
         "description": "mini_Project.mini_Project.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL=\"users.Admin\"\nCRISPY_TEMPLATE_PACK = 'bootstrap4'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL=\"users.Admin\"\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"\nCRISPY_TEMPLATE_PACK = \"bootstrap5\"\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
         "detail": "mini_Project.mini_Project.settings",
         "documentation": {}
     },
@@ -547,7 +889,16 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
         "description": "mini_Project.mini_Project.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL=\"users.Admin\"\nCRISPY_TEMPLATE_PACK = 'bootstrap4'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL=\"users.Admin\"\nCRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"\nCRISPY_TEMPLATE_PACK = \"bootstrap5\"\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSESSION_ENGINE = 'django.contrib.sessions.backends.db'",
+        "detail": "mini_Project.mini_Project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CRISPY_ALLOWED_TEMPLATE_PACKS",
+        "kind": 5,
+        "importPath": "mini_Project.mini_Project.settings",
+        "description": "mini_Project.mini_Project.settings",
+        "peekOfCode": "CRISPY_ALLOWED_TEMPLATE_PACKS = \"bootstrap5\"\nCRISPY_TEMPLATE_PACK = \"bootstrap5\"\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSESSION_ENGINE = 'django.contrib.sessions.backends.db'",
         "detail": "mini_Project.mini_Project.settings",
         "documentation": {}
     },
@@ -556,7 +907,7 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
         "description": "mini_Project.mini_Project.settings",
-        "peekOfCode": "CRISPY_TEMPLATE_PACK = 'bootstrap4'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "CRISPY_TEMPLATE_PACK = \"bootstrap5\"\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSESSION_ENGINE = 'django.contrib.sessions.backends.db'",
         "detail": "mini_Project.mini_Project.settings",
         "documentation": {}
     },
@@ -565,7 +916,7 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
         "description": "mini_Project.mini_Project.settings",
-        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSESSION_ENGINE = 'django.contrib.sessions.backends.db'",
         "detail": "mini_Project.mini_Project.settings",
         "documentation": {}
     },
@@ -574,7 +925,7 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
         "description": "mini_Project.mini_Project.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSESSION_ENGINE = 'django.contrib.sessions.backends.db'",
         "detail": "mini_Project.mini_Project.settings",
         "documentation": {}
     },
@@ -583,7 +934,16 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.settings",
         "description": "mini_Project.mini_Project.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSESSION_ENGINE = 'django.contrib.sessions.backends.db'",
+        "detail": "mini_Project.mini_Project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SESSION_ENGINE",
+        "kind": 5,
+        "importPath": "mini_Project.mini_Project.settings",
+        "description": "mini_Project.mini_Project.settings",
+        "peekOfCode": "SESSION_ENGINE = 'django.contrib.sessions.backends.db'",
         "detail": "mini_Project.mini_Project.settings",
         "documentation": {}
     },
@@ -592,7 +952,7 @@
         "kind": 5,
         "importPath": "mini_Project.mini_Project.urls",
         "description": "mini_Project.mini_Project.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('login', users_views.logIn, name='login'),\n    path('register', users_views.register, name='register'),\n    path('', products_views.home, name='home'),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', products_views.home, name='home'),\n    path('users/', include('users.urls')),\n    path('products/', include('products.urls')),\n    # path('products', products_views.products, name='home'),\n    # path('checkout', products_views.checkout, name='checkout'),\n    # path('login', users_views.logIn, name='login'),\n    # path('register', users_views.register, name='register'),\n    # path('thanks', products_views.thanks, name='thanks'),",
         "detail": "mini_Project.mini_Project.urls",
         "documentation": {}
     },
@@ -612,6 +972,42 @@
         "description": "mini_Project.products.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('users', '0002_alter_admin_options_alter_customer_options'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "mini_Project.products.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "mini_Project.products.migrations.0002_alter_orderdetails_unit_price",
+        "description": "mini_Project.products.migrations.0002_alter_orderdetails_unit_price",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('products', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='orderdetails',\n            name='unit_price',\n            field=models.DecimalField(decimal_places=2, default=0, max_digits=10),\n        ),",
+        "detail": "mini_Project.products.migrations.0002_alter_orderdetails_unit_price",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "mini_Project.products.migrations.0003_alter_orderdetails_unit_price",
+        "description": "mini_Project.products.migrations.0003_alter_orderdetails_unit_price",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('products', '0002_alter_orderdetails_unit_price'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='orderdetails',\n            name='unit_price',\n            field=models.DecimalField(decimal_places=2, max_digits=10),\n        ),",
+        "detail": "mini_Project.products.migrations.0003_alter_orderdetails_unit_price",
+        "documentation": {}
+    },
+    {
+        "label": "split_word",
+        "kind": 2,
+        "importPath": "mini_Project.products.templatetags.filters",
+        "description": "mini_Project.products.templatetags.filters",
+        "peekOfCode": "def split_word(value, key):\n    value = str(value)\n    \"\"\"\n        Returns the value turned into a list.\n    \"\"\"\n    return value.split(str(key))",
+        "detail": "mini_Project.products.templatetags.filters",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 5,
+        "importPath": "mini_Project.products.templatetags.filters",
+        "description": "mini_Project.products.templatetags.filters",
+        "peekOfCode": "register = template.Library()\n@register.filter(name='split_word')\ndef split_word(value, key):\n    value = str(value)\n    \"\"\"\n        Returns the value turned into a list.\n    \"\"\"\n    return value.split(str(key))",
+        "detail": "mini_Project.products.templatetags.filters",
         "documentation": {}
     },
     {
@@ -651,11 +1047,74 @@
         "documentation": {}
     },
     {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "mini_Project.products.urls",
+        "description": "mini_Project.products.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', views.home, name='home'),\n    path('shop', views.products, name='products'),\n    path('checkout', views.checkout, name='checkout'),\n    path('thanks', views.thanks, name='thanks'),\n    path('order/success', views.place_order, name='place_order'),\n    path('order/history', views.order_history, name='order_history'),\n    # Add more URL patterns for the other app here...\n]",
+        "detail": "mini_Project.products.urls",
+        "documentation": {}
+    },
+    {
         "label": "home",
         "kind": 2,
         "importPath": "mini_Project.products.views",
         "description": "mini_Project.products.views",
-        "peekOfCode": "def home(request):\n    products = Product.objects.all()\n    return render(request, 'products/home.html', {'products': products})",
+        "peekOfCode": "def home(request):\n    products = Product.objects.all()\n    print(\"authenticated home? \", request.user)\n    return render(request, 'products/home.html', {'products': products})\ndef products(request):\n    products = Product.objects.all()\n    print(\"am i authenticated products? \", request.user.is_authenticated)\n    return render(request, 'products/products.html', {'products': products})\ndef checkout(request):\n    print(\"checkout?\")",
+        "detail": "mini_Project.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "products",
+        "kind": 2,
+        "importPath": "mini_Project.products.views",
+        "description": "mini_Project.products.views",
+        "peekOfCode": "def products(request):\n    products = Product.objects.all()\n    print(\"am i authenticated products? \", request.user.is_authenticated)\n    return render(request, 'products/products.html', {'products': products})\ndef checkout(request):\n    print(\"checkout?\")\n    if request.user.is_authenticated:\n        return render(request, 'products/checkout.html')\n    else:\n        print(\"checkout unauthenticated?\")",
+        "detail": "mini_Project.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "checkout",
+        "kind": 2,
+        "importPath": "mini_Project.products.views",
+        "description": "mini_Project.products.views",
+        "peekOfCode": "def checkout(request):\n    print(\"checkout?\")\n    if request.user.is_authenticated:\n        return render(request, 'products/checkout.html')\n    else:\n        print(\"checkout unauthenticated?\")\n        return redirect('login')\ndef thanks(request):\n    if request.user.is_authenticated:\n        return render(request, 'products/thanks.html')",
+        "detail": "mini_Project.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "thanks",
+        "kind": 2,
+        "importPath": "mini_Project.products.views",
+        "description": "mini_Project.products.views",
+        "peekOfCode": "def thanks(request):\n    if request.user.is_authenticated:\n        return render(request, 'products/thanks.html')\n    else:\n        return redirect('login')\ndef place_order(request):\n    if request.user.is_authenticated and request.method == 'POST':\n        print(\"request order? \", request.user.id)\n        try:\n            customer = Customer.objects.get(id=request.user.id)",
+        "detail": "mini_Project.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "place_order",
+        "kind": 2,
+        "importPath": "mini_Project.products.views",
+        "description": "mini_Project.products.views",
+        "peekOfCode": "def place_order(request):\n    if request.user.is_authenticated and request.method == 'POST':\n        print(\"request order? \", request.user.id)\n        try:\n            customer = Customer.objects.get(id=request.user.id)\n            data = json.loads(request.body)\n            print(f\"order: {data} \")\n            cart_data = data.get('cartData', [])\n            print(f\"cart data: {cart_data}, cart_data_type: {type(cart_data)} \")\n            product_names = [item['name'] for item in cart_data]",
+        "detail": "mini_Project.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "order_history",
+        "kind": 2,
+        "importPath": "mini_Project.products.views",
+        "description": "mini_Project.products.views",
+        "peekOfCode": "def order_history(request):\n    print(\"yea history\")\n    if request.user.is_authenticated:\n            print(f\"user? {request.user.id}\")\n            order_hist = Order.objects.filter(customer_id=request.user.id)\n            if not order_hist:\n                return render(request, 'products/history.html', {'orders': []})\n            print(f\"user? {request.user.id}\")\n            return render(request, 'products/order_history.html', {'orders': order_hist})\n    return render(request, 'products/order_history.html', {'orders': []})",
+        "detail": "mini_Project.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "page_404",
+        "kind": 2,
+        "importPath": "mini_Project.products.views",
+        "description": "mini_Project.products.views",
+        "peekOfCode": "def page_404(request, exception):\n    print(\"am i even called?\")\n    data = {\"exception\": \"404 Error\"}\n    return render(request,'404.html', data)",
         "detail": "mini_Project.products.views",
         "documentation": {}
     },
@@ -678,11 +1137,74 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "mini_Project.users.migrations.0003_alter_customer_email_alter_customer_username",
+        "description": "mini_Project.users.migrations.0003_alter_customer_email_alter_customer_username",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0002_alter_admin_options_alter_customer_options'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customer',\n            name='email',\n            field=models.EmailField(max_length=254, unique=True),\n        ),",
+        "detail": "mini_Project.users.migrations.0003_alter_customer_email_alter_customer_username",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "mini_Project.users.migrations.0004_alter_customer_email",
+        "description": "mini_Project.users.migrations.0004_alter_customer_email",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0003_alter_customer_email_alter_customer_username'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customer',\n            name='email',\n            field=models.EmailField(error_messages={'unique': 'A user with that email already exists.'}, max_length=254, unique=True, verbose_name='email address'),\n        ),",
+        "detail": "mini_Project.users.migrations.0004_alter_customer_email",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "mini_Project.users.migrations.0005_alter_customer_address_alter_customer_phone",
+        "description": "mini_Project.users.migrations.0005_alter_customer_address_alter_customer_phone",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0004_alter_customer_email'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customer',\n            name='address',\n            field=models.TextField(blank=True, null=True),\n        ),",
+        "detail": "mini_Project.users.migrations.0005_alter_customer_address_alter_customer_phone",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "mini_Project.users.migrations.0006_alter_customer_phone",
+        "description": "mini_Project.users.migrations.0006_alter_customer_phone",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0005_alter_customer_address_alter_customer_phone'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customer',\n            name='phone',\n            field=phonenumber_field.modelfields.PhoneNumberField(blank=True, max_length=20, null=True, region=None),\n        ),",
+        "detail": "mini_Project.users.migrations.0006_alter_customer_phone",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "mini_Project.users.migrations.0007_alter_customer_username",
+        "description": "mini_Project.users.migrations.0007_alter_customer_username",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0006_alter_customer_phone'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customer',\n            name='username',\n            field=models.CharField(blank=True, max_length=150, null=True),\n        ),",
+        "detail": "mini_Project.users.migrations.0007_alter_customer_username",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterViewTestCase",
+        "kind": 6,
+        "importPath": "mini_Project.users.tests.test_register",
+        "description": "mini_Project.users.tests.test_register",
+        "peekOfCode": "class RegisterViewTestCase(TestCase):\n    def setUp(self):\n        self.client = Client()\n    def test_register_valid_form(self):\n        phone_number_string = '+12125552368'  # Replace with your actual phone number\n        parsed_phone_number = parse(phone_number_string, None)\n        formatted_phone_number = format_number(parsed_phone_number, PhoneNumberFormat.E164)\n        # Prepare valid form data\n        form_data = {\n            'username': 'testuser',",
+        "detail": "mini_Project.users.tests.test_register",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerAuthenticationBackend",
+        "kind": 6,
+        "importPath": "mini_Project.users.auth_backend",
+        "description": "mini_Project.users.auth_backend",
+        "peekOfCode": "class CustomerAuthenticationBackend(ModelBackend):\n    def authenticate(self, request, username=None, password=None, **kwargs):\n        try:\n            customer = Customer.objects.get(email=username, is_active=True)\n        except Customer.DoesNotExist:\n            return None\n        if customer.check_password(password):\n            return customer\n    def get_user(self, user_id):\n        try:",
+        "detail": "mini_Project.users.auth_backend",
+        "documentation": {}
+    },
+    {
         "label": "LoginForm",
         "kind": 6,
         "importPath": "mini_Project.users.forms",
         "description": "mini_Project.users.forms",
-        "peekOfCode": "class LoginForm(forms.ModelForm):\n    class Meta:\n        model = Customer\n        fields = ['password' ,'email']\n    def __init__(self, *args, **kwargs):\n        super(LoginForm, self).__init__(*args, **kwargs)\n        self.helper = FormHelper()\n        self.fields['password'].widget = forms.PasswordInput()\n        self.helper.form_method = 'post'\n        self.helper.layout = Layout(",
+        "peekOfCode": "class LoginForm(forms.Form):\n    email = forms.EmailField(\n        widget=forms.EmailInput(attrs={'id': 'email', 'placeholder': 'Enter your email address', 'class': 'form-control'}),\n        required=True\n    )\n    password = forms.CharField(\n        widget=forms.PasswordInput(attrs={'id': 'password', 'placeholder': 'Enter your password', 'class': 'form-control'}),\n        required=True\n    )\n    def __init__(self, *args, **kwargs):",
         "detail": "mini_Project.users.forms",
         "documentation": {}
     },
@@ -691,7 +1213,7 @@
         "kind": 6,
         "importPath": "mini_Project.users.forms",
         "description": "mini_Project.users.forms",
-        "peekOfCode": "class CustomerForm(forms.ModelForm):\n    class Meta:\n        model = Customer\n        fields = ['username', 'password' ,'email', 'phone', 'address']  # Customize this list as needed\n    def __init__(self, *args, **kwargs):\n        super(CustomerForm, self).__init__(*args, **kwargs)\n        self.helper = FormHelper()\n        self.fields['password'].widget = forms.PasswordInput()\n        self.helper.layout = Layout(\n            Row(",
+        "peekOfCode": "class CustomerForm(forms.ModelForm):\n    phone = PhoneNumberField()\n    class Meta:\n        model = Customer\n        fields = ['username', 'password' ,'email', 'phone', 'address']  # Customize this list as needed\n        widgets = {\n            'username': forms.TextInput(attrs={'maxlength':'150', 'class': 'form-control form-control-lg'}),\n            'password':  forms.PasswordInput(attrs={'class':'form-control form-control-lg'}),\n            'email': forms.EmailInput(attrs={'class':'form-control form-control-lg'}),\n            'phone': forms.TextInput(attrs={'class': 'form-control form-control-lg'}), ",
         "detail": "mini_Project.users.forms",
         "documentation": {}
     },
@@ -709,16 +1231,25 @@
         "kind": 6,
         "importPath": "mini_Project.users.models",
         "description": "mini_Project.users.models",
-        "peekOfCode": "class Customer(AbstractUser):\n    class Meta:\n        verbose_name_plural = 'Customer'\n    phone = models.CharField(max_length=20)\n    address = models.TextField()\n    groups = models.ManyToManyField(Group, related_name='customer_users')\n    user_permissions = models.ManyToManyField(Permission, related_name='customer_users')\n    def __str__(self):\n        return self.username",
+        "peekOfCode": "class Customer(AbstractUser):\n    class Meta:\n        verbose_name_plural = 'Customer'    \n    USERNAME_FIELD = 'email'\n    username = models.CharField(\n        max_length=150,\n        unique=False,\n        blank=True,  # Allow an empty username\n        null=True    # Allow NULL for the username in the database\n    )",
         "detail": "mini_Project.users.models",
         "documentation": {}
     },
     {
-        "label": "logIn",
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "mini_Project.users.urls",
+        "description": "mini_Project.users.urls",
+        "peekOfCode": "urlpatterns = [\n    path('login', views.login_user, name='login'),\n    path('register', views.register, name='register'),\n    path('logout', views.logout_user, name='logout'),\n    # Add more URL patterns for the other app here...\n]",
+        "detail": "mini_Project.users.urls",
+        "documentation": {}
+    },
+    {
+        "label": "login_user",
         "kind": 2,
         "importPath": "mini_Project.users.views",
         "description": "mini_Project.users.views",
-        "peekOfCode": "def logIn(request):\n    # CustomerForm = modelform_factory(Customer, fields=['username', 'password', 'email', 'phone', 'address'])\n    if request.method == \"POST\":\n        form = LoginForm(request.POST)\n        print(\"testing before valid\")\n        if form.is_valid():\n            print(\"testing after valid\")\n            email = form.cleaned_data['email']\n            password = form.cleaned_data['password']\n            try:",
+        "peekOfCode": "def login_user(request):\n    print(\"LOGIN PAGE\")\n    if request.method == \"POST\":\n        form = LoginForm(request.POST)\n        print(f\"is form valid?\")\n        if form.is_valid():\n            print('is valid?')\n            email = form.cleaned_data['email']\n            password = form.cleaned_data['password']\n            user = authenticate(request, username=email, password=password)",
         "detail": "mini_Project.users.views",
         "documentation": {}
     },
@@ -727,7 +1258,34 @@
         "kind": 2,
         "importPath": "mini_Project.users.views",
         "description": "mini_Project.users.views",
-        "peekOfCode": "def register(request):\n    # CustomerForm = modelform_factory(Customer, fields=['username', 'password' ,'email', 'phone', 'address'])\n    print(\"authenticated? \", request.user.is_authenticated)\n    if request.method == 'POST':\n        form = CustomerForm(request.POST)\n        if form.is_valid():\n            # Hash the password\n            password = form.cleaned_data['password']\n            hashed_password = make_password(password)\n            # Create a new Customer instance with the hashed password",
+        "peekOfCode": "def register(request):\n    logger.debug(\"Register view called.\")  # Add this line to log a message\n    # CustomerForm = modelform_factory(Customer, fields=['username', 'password' ,'email', 'phone', 'address'])\n    print(\"authenticated? \", request.user.is_authenticated, flush=True)\n    if request.method == 'POST':\n        logger.debug(f\"post request?.\")  # Add this line to log a message\n        form = CustomerForm(request.POST)\n        logger.debug(f\"created form?. {form}\") \n        if form.is_valid():\n            logger.debug(\"is form valid?.\") ",
+        "detail": "mini_Project.users.views",
+        "documentation": {}
+    },
+    {
+        "label": "check_login_status",
+        "kind": 2,
+        "importPath": "mini_Project.users.views",
+        "description": "mini_Project.users.views",
+        "peekOfCode": "def check_login_status(request):\n    print(f'logged in? {request.user.is_authenticated}')\n    if request.user.is_authenticated:\n        print(\"is user authenticated?\")\n        return JsonResponse({'is_authenticated': True})\n    else:\n        return JsonResponse({'is_authenticated': False})\n@csrf_exempt\ndef logout_user(request):\n    logout(request)",
+        "detail": "mini_Project.users.views",
+        "documentation": {}
+    },
+    {
+        "label": "logout_user",
+        "kind": 2,
+        "importPath": "mini_Project.users.views",
+        "description": "mini_Project.users.views",
+        "peekOfCode": "def logout_user(request):\n    logout(request)\n    return redirect('products')",
+        "detail": "mini_Project.users.views",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "mini_Project.users.views",
+        "description": "mini_Project.users.views",
+        "peekOfCode": "logger = logging.getLogger(__name__)\n# def register(request):\n#     logger.debug(\"Register view called.\")  # Add this line to log a message\n#     # Rest of your view code...\ndef register(request):\n    logger.debug(\"Register view called.\")  # Add this line to log a message\n    # CustomerForm = modelform_factory(Customer, fields=['username', 'password' ,'email', 'phone', 'address'])\n    print(\"authenticated? \", request.user.is_authenticated, flush=True)\n    if request.method == 'POST':\n        logger.debug(f\"post request?.\")  # Add this line to log a message",
         "detail": "mini_Project.users.views",
         "documentation": {}
     },

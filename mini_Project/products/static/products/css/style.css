@@ -1926,6 +1926,30 @@ section.dottad_star_bg {
 	float: left;
 }
 
+
+/* Adjust the width of the carousel control buttons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 10%!important;
+}
+
+/* Customize the button colors and icons */
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+  background-color: #007bff!important; /* Button background color */
+  color: #fff!important; /* Button text color */
+  border-radius: 50%!important; /* Rounded buttons */
+  font-size: 24px!important; /* Button icon size */
+  padding: 10px!important; /* Button padding */
+}
+
+/* Style the buttons on hover */
+.carousel-control-prev:hover .carousel-control-prev-icon::before,
+.carousel-control-next:hover .carousel-control-next-icon::before {
+  background-color: #0056b3!important; /* Hover background color */
+}
+
+
 .heading_testi h4 {
 	text-transform: uppercase;
 	margin-bottom: 0;
@@ -4894,9 +4918,9 @@ footer ul.social_icons {
     border-radius: 50%;
     background: #d60b28;
     position: absolute;
-    width: 16px;
-    height: 16px;
-    line-height: 16px;
+	width: 19px;
+    height: 18px;
+    line-height: 12px;
     display: block;
     text-align: center;
     color: white;
@@ -4905,6 +4929,11 @@ footer ul.social_icons {
     top: 28px; /* Adjust the top position */
     right: 19px; /* Adjust the right position */
 }
+
+
+ 
+
+
 
 @media (max-width: 768px) {
     .cart-icon {

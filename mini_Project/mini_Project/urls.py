@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 from django.conf.urls import handler404
 
 
-handler404 = 'products.views.page_404' 
+# handler404 = 'products.views.page_404' 
 
 
 urlpatterns = [

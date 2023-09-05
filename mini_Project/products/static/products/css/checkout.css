@@ -3,7 +3,7 @@
     background: #eecda3;
     background: -webkit-linear-gradient(to right, #eecda3, #ef629f);
     background: linear-gradient(to right, #eecda3, #ef629f);
-    /* min-height: 100vh; */
+    min-height: 100vh;
   }
 
 

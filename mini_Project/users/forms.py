@@ -6,6 +6,8 @@ from crispy_forms.layout import Layout, Field
 from .models import Customer
 
 
+# The above class is a login form in Python that includes fields for email and password, with
+# corresponding HTML attributes and CSS classes.
 class LoginForm(forms.Form):
     email = forms.EmailField(
         widget=forms.EmailInput(attrs={'id': 'email', 'placeholder': 'Enter your email address', 'class': 'form-control'}),
@@ -26,8 +28,9 @@ class LoginForm(forms.Form):
         )
         self.fields['email'].required = True
 
-  # Import your Customer model
 
+# The `CustomerForm` class is a Django form that allows users to input information such as username,
+# password, email, phone number, and address, with customized widgets and validation.
 class CustomerForm(forms.ModelForm):
     phone = PhoneNumberField()
     class Meta:

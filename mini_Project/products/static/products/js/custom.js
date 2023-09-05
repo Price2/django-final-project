@@ -247,49 +247,56 @@ var itemCount = 0;
       
   });
 
-  $(document).ready(function () {
-    // Check if a menu item was previously clicked and apply the 'active' class
-    var activeMenuItem = localStorage.getItem('activeMenuItem');
-    if (activeMenuItem) {
-        $('#' + activeMenuItem).addClass('active');
-    }
-    console.log("HEY IM INSIDE HERE")
-    // Handle click events on menu items
-    $('.menu-btn').click(function (e) {
-        e.preventDefault(); // Prevent the default behavior of the link
-        var clickedMenuItem = $(this).attr('id');
-        
-        // Remove 'active' class from all menu items
-        $('.menu-btn').removeClass('active');
-
-        // // Add 'active' class to the clicked menu item
-        // $(this).addClass('active');
-
-        // Store the clicked menu item in localStorage
-        localStorage.setItem('activeMenuItem', clickedMenuItem);
-        
-        // Redirect to the clicked link
-        window.location.href = $(this).attr('href');
+  $(document).ready(function() {
+    var currentUrl = window.location.pathname;
+    console.log("current url ", currentUrl)
+    // Iterate through the menu buttons
+    $('.menu-btn').each(function() {
+        var buttonUrl = $(this).attr('href');
+        console.log("button url ", buttonUrl)
+        // Check if the button's href matches the current URL
+        if (currentUrl === buttonUrl) {
+            $('.menu-btn').removeClass('active');
+            $(this).addClass('active'); // Add the 'active' class
+        }
     });
 });
 
   
 
+/**
+ * The function checks if the order history is empty and appends a message if it is.
+ */
 function empty_order_history() {
     if ($('.order-history-body').children().length === 0) {
         $('.order-history-body').append(`<td class="empty_history" colspan="5"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">You have no orders!</h2></td>`)
     }
 }
+/**
+ * The function checks if the body of the cart is empty by counting the number of children elements and
+ * returns a boolean value.
+ * @returns a boolean value indicating whether the cart body is empty or not.
+ */
 function isEmpty() {
     console.log("empty? ", $(".cart-body").children().length === 0)
     console.log("body of cart ", $(".cart-body").children())
     return $(".cart-body").children().length === 0
 }
 
+/**
+ * The function `cartEmptyText` appends a table cell with a message indicating that the cart is empty.
+ */
 function cartEmptyText() {
     $(".table-hover").append(`<td class="emptycart_text" colspan="5"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
 }
 
+/**
+ * The function removes an item from the cart and updates the cart counter, total, and checkout button
+ * status.
+ * @param e - The parameter "e" is likely an event object that is passed to the function when it is
+ * called. It is used to reference the element that triggered the event. In this case, it is used to
+ * find the closest "tr" element (table row) and remove it from the DOM.
+ */
 function removeFromCart(e) {
     e.closest("tr").remove();
     if (isEmpty()) {
@@ -307,6 +314,14 @@ function removeFromCart(e) {
     save_product_changes()
 
 }
+
+/**
+ * The function addToCart adds a product to the shopping cart and updates the total price.
+ * @param product - The `product` parameter is an object that contains information about the product
+ * being added to the cart. It should have the following properties:
+ * @param removeFromCart - The `removeFromCart` parameter is a function that will be called when the
+ * user clicks on the trash icon to remove the product from the cart.
+ */
 function addToCart(product, removeFromCart){
     $(".cart-body").append(`<tr class="prod_info"style=" flex: 1!important;
         margin: 5px!important;">
@@ -323,6 +338,14 @@ function addToCart(product, removeFromCart){
     
 }
 
+/**
+ * The function calculates the total price of products in a shopping cart based on their quantity and
+ * price.
+ * @param e - The parameter "e" is typically used to represent the event object. It is commonly used in
+ * event handlers to access information about the event that occurred, such as the target element or
+ * the type of event. In this case, it seems that the "update_total" function is being called in
+ * response to
+ */
 function update_total(e) {
     var total = 0;
     $('.prod_info').each(function () {
@@ -335,6 +358,10 @@ function update_total(e) {
     
 }
  
+/**
+ * The function saves changes made to product information in a shopping cart to the browser's local
+ * storage.
+ */
 function save_product_changes() {
     var products = [];
     console.log("storage contains anything? ", products);
@@ -358,6 +385,10 @@ $(document).on('input', '.cart-quantity', function() {
     save_product_changes();
   });
   
+/**
+ * The function `load_cart()` retrieves data from local storage, parses it into an array of objects,
+ * and calls the `update_cart()` function with the parsed data.
+ */
 function load_cart() {
     if (localStorage.getItem('cart_prod')) {
         // Retrieve the data as a string from local storage
@@ -378,6 +409,16 @@ function load_cart() {
     }
 }
 
+/**
+ * The function `update_cart` takes in an array of products and a function `removeFromCart`, and
+ * appends the product information to the cart body element in the HTML, updating the cart counter and
+ * total.
+ * @param products - An array of objects representing the products in the cart. Each object should have
+ * the following properties:
+ * @param removeFromCart - The `removeFromCart` parameter is a function that is called when the user
+ * clicks on the trash icon to remove a product from the cart. It is passed as an argument to the
+ * `update_cart` function.
+ */
 function update_cart(products, removeFromCart) {
     console.log("products: " ,products)
     const product_body = $('.cart-body')
@@ -400,6 +441,10 @@ function update_cart(products, removeFromCart) {
 }
   
 
+/**
+ * The function `checkLoginStatus` checks the login status of a user and updates the visibility of
+ * login, register, and logout buttons accordingly.
+ */
 function checkLoginStatus() {
     console.log("checking?")
     $.ajax({

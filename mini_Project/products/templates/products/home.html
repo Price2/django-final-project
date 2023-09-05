@@ -77,9 +77,9 @@
           </div>
           <div class="login-register-btn">
             <div class="make_appo">
-              <a id="login" href="/users/login"><button class="btn btn-primary m-0 authentication-btn under text-decoration-underline">Login</button> </a>
-              <a id="register" href="/users/register"><button class="btn btn-dark m-0 authentication-btn">Register</button> </a>
-              <a id="logout" class="ml-3" href="/users/logout" style="text-decoration:underline!important; color:gray"><button class="btn btn-info m-0 authentication-btn text-decoration-underline">Logout</button></a>
+              <a id="login" href="{% url 'login' %}"><button class="btn btn-primary m-0 authentication-btn under text-decoration-underline">Login</button> </a>
+              <a id="register" href="{% url 'register' %}"><button class="btn btn-dark m-0 authentication-btn">Register</button> </a>
+              <a id="logout" class="ml-3" href="{% url 'logout' %}" style="text-decoration:underline!important; color:gray"><button class="btn btn-info m-0 authentication-btn text-decoration-underline">Logout</button></a>
 
               </div>
             <!-- <div class="make_appo">  -->
@@ -95,7 +95,7 @@
       <div class="row">
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
           <!-- logo start -->
-          <div class="logo"> <a href="/"><img src="{% static 'products/images/logos/it_logo.png' %}" alt="logo" /></a> </div>
+          <div class="logo"> <a href="{% url 'home' %}"><img src="{% static 'products/images/logos/it_logo.png' %}" alt="logo" /></a> </div>
           <!-- logo end -->
         </div>
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
@@ -103,12 +103,12 @@
           <div class="menu_side">
             <div id="navbar_menu">
               <ul class="first-ul">
-                <li> <a id="home" class="menu-btn" href="/products">Home</a>
+                <li> <a id="home" class="menu-btn active" href="{% url 'home' %}">Home</a>
                 </li>
              
-                <li> <a id="shop" class="menu-btn" href="/products/shop" >Shop</a>
+                <li> <a id="shop" class="menu-btn" href="{% url 'products' %}" >Shop</a>
                 </li>
-                <li> <a id="order" class="menu-btn" href="/products/order/history">Order History</a>
+                <li> <a id="order" class="menu-btn" href="{% url 'order_history' %}">Order History</a>
                 </li>
               </ul>
             </div>
@@ -453,7 +453,7 @@
               <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <p class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class="fa fa-bar-chart" aria-hidden="true"></i> Complete Recovery from Local & External Drive<i class="fa fa-angle-down"></i></a> </p>
+                    <p class="panel-title"> <a data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseOne"><i class="fa fa-bar-chart" aria-hidden="true"></i> Complete Recovery from Local & External Drive<i class="fa fa-angle-down"></i></a> </p>
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in">
                     <div class="panel-body">
@@ -465,7 +465,7 @@
                 </div>
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <p class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><i class="fa fa-plane"></i> Recovery Photo, Image, Video and Audio<i class="fa fa-angle-down"></i></a> </p>
+                    <p class="panel-title"> <a data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseTwo"><i class="fa fa-plane"></i> Recovery Photo, Image, Video and Audio<i class="fa fa-angle-down"></i></a> </p>
                   </div>
                   <div id="collapseTwo" class="panel-collapse collapse">
                     <div class="panel-body">
@@ -477,7 +477,7 @@
                 </div>
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <p class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><i class="fa fa-star"></i> Mobile Phone Recovery<i class="fa fa-angle-down"></i></a> </p>
+                    <p class="panel-title"> <a data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseThree"><i class="fa fa-star"></i> Mobile Phone Recovery<i class="fa fa-angle-down"></i></a> </p>
                   </div>
                   <div id="collapseThree" class="panel-collapse collapse">
                     <div class="panel-body">
@@ -489,7 +489,7 @@
                 </div>
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <p class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><i class="fa fa-bar-chart" aria-hidden="true"></i> Complete Recovery from Local & External Drive<i class="fa fa-angle-down"></i></a> </p>
+                    <p class="panel-title"> <a data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseFour"><i class="fa fa-bar-chart" aria-hidden="true"></i> Complete Recovery from Local & External Drive<i class="fa fa-angle-down"></i></a> </p>
                   </div>
                   <div id="collapseFour" class="panel-collapse collapse in">
                     <div class="panel-body">
@@ -758,49 +758,54 @@
     <div class="row">
       <div class="col-sm-7">
         <div class="full">
-          <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+          <div id="testimonial_slider" class="carousel slide" data-bs-ride="carousel">
             <!-- Indicators -->
             <ul class="carousel-indicators">
-              <li data-target="#testimonial_slider" data-slide-to="0" class="active"></li>
-              <li data-target="#testimonial_slider" data-slide-to="1"></li>
-              <li data-target="#testimonial_slider" data-slide-to="2"></li>
+              <li data-bs-target="#testimonial_slider" data-bs-slide-to="0" class="active"></li>
+              <li data-bs-target="#testimonial_slider" data-bs-slide-to="1"></li>
+              <li data-bs-target="#testimonial_slider" data-bs-slide-to="2"></li>
             </ul>
             <!-- The slideshow -->
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="testimonial-container">
-                  <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. 
+                  <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle-free! I wish I would have thought of it first. 
                     I am really satisfied with my first laptop service. </div>
                   <div class="testimonial-photo"> <img src="{% static 'products/images/it_service/client1.jpg' %}" class="img-responsive" alt="#" width="150" height="150"> </div>
                   <div class="testimonial-meta">
                     <h4>Maria Anderson</h4>
-                    <span class="testimonial-position">CFO, Tech NY</span> </div>
+                    <span class="testimonial-position">CFO, Tech NY</span>
+                  </div>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="testimonial-container">
-                  <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. 
+                  <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle-free! I wish I would have thought of it first. 
                     I am really satisfied with my first laptop service. </div>
                   <div class="testimonial-photo"> <img src="{% static 'products/images/it_service/client2.jpg' %}" class="img-responsive" alt="#" width="150" height="150"> </div>
                   <div class="testimonial-meta">
                     <h4>Maria Anderson</h4>
-                    <span class="testimonial-position">CFO, Tech NY</span> </div>
+                    <span class="testimonial-position">CFO, Tech NY</span>
+                  </div>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="testimonial-container">
-                  <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. 
+                  <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle-free! I wish I would have thought of it first. 
                     I am really satisfied with my first laptop service. </div>
                   <div class="testimonial-photo"> <img src="{% static 'products/images/it_service/client3.jpg' %}" class="img-responsive" alt="#" width="150" height="150"> </div>
                   <div class="testimonial-meta">
                     <h4>Maria Anderson</h4>
-                    <span class="testimonial-position">CFO, Tech NY</span> </div>
+                    <span class="testimonial-position">CFO, Tech NY</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    
       <div class="col-sm-5">
         <div class="full"> </div>
       </div>
@@ -892,7 +897,7 @@ aria-hidden="true">
        <p class="align-self-end font-weight-bold" id="total" style="color:black"></p>
 
       <div class="d-flex  w-100">
-       <button class="btn btn-primary w-100" id="checkoutBtn"><a class="w-100" href="/products/checkout" style="text-decoration: none; color:white">Checkout</a></button>
+       <button class="btn btn-primary w-100" id="checkoutBtn"><a class="w-100" href="{% url 'checkout' %}" style="text-decoration: none; color:white">Checkout</a></button>
       </div>
     </div>
   </div>

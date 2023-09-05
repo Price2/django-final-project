@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 from .forms import LoginForm, CustomerForm
 from django.contrib.auth.hashers import make_password
 from django.views.decorators.csrf import csrf_exempt
+import logging
 
 
 """
@@ -22,7 +23,7 @@ the user's IP address, and any data sent with the request
 context.
 """
 def login_user(request):
-    print("LOGIN PAGE")
+    print(f"authenticated? {request.user.is_authenticated}", flush=True)
     if request.method == "POST":
         form = LoginForm(request.POST)
         print(f"is form valid?")
@@ -33,7 +34,6 @@ def login_user(request):
 
             user = authenticate(request, username=email, password=password)
             if user is not None:
-                # Login the user
                 login(request, user)
                 print("Login? ", request.user.username, " email: ", request.user.email)
                 print("logged in successfully? ", request.user.is_authenticated)
@@ -42,7 +42,6 @@ def login_user(request):
             else:
                 error_message = "Invalid email/password"
                 messages.error(request, error_message)
-                # return render(request, 'users/login.html')
     else:
         form = LoginForm()
         print("i reached here ")
@@ -50,29 +49,29 @@ def login_user(request):
 
 
 
+
 def register(request):
-    # CustomerForm = modelform_factory(Customer, fields=['username', 'password' ,'email', 'phone', 'address'])
-    print("authenticated? ", request.user.is_authenticated)
+    """
+    The function "register" handles the registration process for a customer, creating a new user with
+    the provided form data and displaying a success message.
+    
+    :param request: The request object represents the HTTP request made by the user. It contains
+    information such as the user's browser details, the requested URL, and any data sent with the
+    request
+    :return: a rendered HTML template called "users/register.html" with the form as a context variable.
+    """
+
     if request.method == 'POST':
         form = CustomerForm(request.POST)
         if form.is_valid():
-            # Hash the password
-            print("success saving customer")
-            password = form.cleaned_data['password']
-            hashed_password = make_password(password)
-
-            # Create a new Customer instance with the hashed password
-            customer = Customer(
-                username=form.cleaned_data['username'],
-                password=hashed_password,
+            customer = Customer.objects.create_user(
+                  username=form.cleaned_data['username'],
+                password=form.cleaned_data['password'],
                 email=form.cleaned_data['email'],
                 phone=form.cleaned_data['phone'],
                 address=form.cleaned_data['address']
             )
-            # Save the user
-            customer.save()
             form = CustomerForm()
-            print("success saving customer")
             messages.success(request, 'Your registration was successful, please Login to proceed!')
             return render(request, "users/register.html", {'form': form})
     else:
@@ -82,9 +81,19 @@ def register(request):
 
 
 def check_login_status(request):
-    print(f'logged in? {request.user.is_authenticated}')
+    """
+    The function checks the login status of a user and returns a JSON response indicating whether the
+    user is authenticated or not.
+    
+    :param request: The `request` parameter is an object that represents the HTTP request made by the
+    client. It contains information about the request, such as the user making the request, the
+    requested URL, and any data sent with the request. In this case, the `request` object is used to
+    check if the
+    :return: a JSON response indicating whether the user is authenticated or not. If the user is
+    authenticated, the response will contain {'is_authenticated': True}. If the user is not
+    authenticated, the response will contain {'is_authenticated': False}.
+    """
     if request.user.is_authenticated:
-        print("is user authenticated?")
         return JsonResponse({'is_authenticated': True})
     else:
         return JsonResponse({'is_authenticated': False})

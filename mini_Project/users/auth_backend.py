@@ -3,7 +3,6 @@ from .models import Customer  # Import your Customer model
 
 class CustomerAuthenticationBackend(ModelBackend):
     def authenticate(self, request, username=None, password=None, **kwargs):
-        print("im being called")
         try:
             customer = Customer.objects.get(email=username, is_active=True)
         except Customer.DoesNotExist:

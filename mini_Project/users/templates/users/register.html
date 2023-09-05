@@ -27,7 +27,7 @@
                   <div class="card-body p-5">
                     <h2 class="text-uppercase text-center mb-5">Create an account</h2>
       
-                    <form method="post" action="/register">
+                    <form method="post" action="{% url 'register' %}">
                         {% csrf_token %}
                       <div class="form-outline mb-4">
                         <!-- <input type="text" id="form3Example1cg" class="form-control form-control-lg" /> -->
@@ -101,9 +101,9 @@
 
                     
                       <div class="d-flex flex-column align-items-center justify-content-center gap-3">
-                        <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/login"
+                        <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{% url 'login' %}"
                             class="fw-bold text-body"><u>Login here</u></a></p>
-                          <a href="/" class="d-flex align-items-center gap-3" style="color:black; text-decoration: none;"><i class="fa-solid fa-arrow-left mr-3" style="color: #000000;"></i>Back Home</a>
+                          <a href="{% url 'home' %}" class="d-flex align-items-center gap-3" style="color:black; text-decoration: none;"><i class="fa-solid fa-arrow-left mr-3" style="color: #000000;"></i>Back Home</a>
 
                       </div>
 
