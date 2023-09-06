@@ -572,6 +572,11 @@ a:focus {
   }
 }
 
+.disabled-checkout-btn{
+	background-color: #afafaf!important;
+	border-color:#afafaf!important;
+}
+
 .price {
   margin-left: 1rem;
 }
@@ -1225,6 +1230,12 @@ header .right_bt .btn {
     background-color: transparent !important; /* Remove the background color */
     opacity: 0 !important; /* Set opacity to 0 to make it fully transparent */
 }
+
+@media (min-width: 1025px) {
+	.h-custom {
+	height: 100vh !important;
+	}
+	}
 /* #search_bar .modal-content {
 	position: relative;
 	background-color: transparent;

@@ -22,7 +22,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <!-- Site css -->
-<link rel="stylesheet" href="{% static 'products/css/style.css' %}" />
 <!-- responsive css -->
 <link rel="stylesheet" href="{% static 'products/css/responsive.css' %}" />
 <!-- colors css -->
@@ -32,11 +31,16 @@
 <!-- wow Animation css -->
 <link rel="stylesheet" href="{% static 'products/css/animate.css' %}" />
 
+<link rel="stylesheet" href="{% static 'products/css/style.css' %}" />
+
+<link rel="stylesheet" href="{% static 'products/css/checkout.css' %}" />
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
 </head>
 <body id="default_theme" class="it_shop_list">
+  
 <!-- loader -->
 <div class="bg_load"> <img class="loader_animation" src="{% static 'products/images/loaders/loader_1.png' %}" alt="#" /> </div>
 <!-- end loader -->
@@ -171,6 +175,9 @@
 
 {% endblock %}
  <!-- Modal: modalCart -->
+ <!-- <form method="post"> -->
+  <!-- {% csrf_token %} -->
+
  <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
  aria-hidden="true">
  <div class="modal-dialog" role="document">
@@ -215,13 +222,14 @@
         <p class="align-self-end font-weight-bold" id="total" style="color:black"></p>
 
        <div class="d-flex  w-100">
-         <button class="btn btn-primary w-100">Checkout</button>
+         <button class="btn btn-primary w-100" id="checkoutBtn"><a href="/checkout">Checkout</a></button>
          <!-- <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button> -->
        </div>
      </div>
    </div>
  </div>
 </div>
+<!-- </form> -->
 <!-- end section -->
 <!-- Modal -->
 <!-- <div class="modal fade" id="search_bar" role="dialog">
@@ -315,9 +323,9 @@
           </div>
         </div>
       </div>
-      <div class="cprt">
+      <!-- <div class="cprt">
         <p>ItNext © Copyrights 2019 Design by html.design</p>
-      </div>
+      </div> -->
     </div>
   </div>
 </footer>
@@ -334,6 +342,8 @@
 <script src="{% static 'products/js/wow.js' %}"></script>
 <!-- custom js -->
 <script src="{% static 'products/js/custom.js' %}"></script>
+<!-- checkout page js -->
+<script src="{% static 'products/js/checkout.js' %}"></script>
 
 </body>
 </html>

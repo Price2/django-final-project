@@ -1,0 +1,16 @@
+
+.checkout-bg {
+    background: #eecda3;
+    background: -webkit-linear-gradient(to right, #eecda3, #ef629f);
+    background: linear-gradient(to right, #eecda3, #ef629f);
+    /* min-height: 100vh; */
+  }
+
+
+  .proceed-checkout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    font-weight: 700;
+  }

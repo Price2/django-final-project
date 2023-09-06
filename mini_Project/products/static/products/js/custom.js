@@ -203,11 +203,11 @@ var itemCount = 0;
           var prod_price = $(this).closest(".product_list").find('.prod_price').text();
           var prod_img = $(this).closest(".product_list").find(".prod_img").attr("src");
           
-        console.log("product price ", $(this).closest(".product_list").find('.prod_price').text()    )
+        // console.log("product price ", $(this).closest(".product_list").find('.prod_price').text()    )
         addToCart({ "prod_name": prod_name, "prod_price": prod_price, "prod_img_url": prod_img })
         itemCount++;
         $("#cart-counter").text(itemCount);
-        console.log("prod name: " + prod_name + " prod_price: " + prod_price + " prod img: " + prod_img);
+        // console.log("prod name: " + prod_name + " prod_price: " + prod_price + " prod img: " + prod_img);
     })
     
     $("#cart-icon").click(function () {
@@ -236,13 +236,34 @@ var itemCount = 0;
            </tr> -->
          </tbody>
             <td class="emptycart_text" colspan="5"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
+            $('#checkoutBtn').prop("disabled", true);
+            $('#checkoutBtn').addClass("disabled-checkout-btn");
         }
         else {
             $(".emptycart_text").remove()
+            $('#checkoutBtn').prop("disabled", false);
+            $('#checkoutBtn').removeClass("disabled-checkout-btn");
+            // $('.checkout-btn').css({ "background-color":"#007bff", "border-color":"#007bff"});
         }
     })
     
-    update_total();
+      update_total();
+
+    //   $('#checkoutBtn').click(function (e) { 
+    //     $.ajax({
+    //         url: "/checkout", // Replace with your API endpoint
+    //         method: "GET",
+    //         success: function(data) {
+    //           // Handle the successful response
+    //           $("#output").html(data); // Display the data on the page
+    //         },
+    //         error: function(jqXHR, textStatus, errorThrown) {
+    //           // Handle errors here
+    //           console.error("AJAX error:", textStatus, errorThrown);
+    //         }
+    //       });
+        
+    //   });
 });
 function cartEmptyText() {
     $(".table-hover").append(`<td class="emptycart_text" colspan="5"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
@@ -252,41 +273,67 @@ function removeFromCart(e) {
     e.closest("tr").remove();
     if (isEmpty()) {
         cartEmptyText()
+        $('#checkoutBtn').prop("disabled", true);
+        $('#checkoutBtn').addClass("disabled-checkout-btn");
+    }
+    else {
+        $('#checkoutBtn').prop("disabled", false);
+        $('#checkoutBtn').removeClass("disabled-checkout-btn");
     }
     itemCount--
     $("#cart-counter").text(itemCount);
     update_total()
+    save_product_changes()
 
 }
 function addToCart(product, removeFromCart){
     $(".cart-body").append(`<tr class="prod_info">
-    <td class="w-25"><img class="img-fluid w-75" src="${product.prod_img_url}" alt=""></td>
-    <th scope="row">${product.prod_name}</th>
+    <td class="w-25"><img class="img-fluid w-75 cart-img" src="${product.prod_img_url}" alt=""></td>
+    <th scope="row" class="cart_prod_name">${product.prod_name}</th>
     <td class="cart_prod_price">${product.prod_price}</td>
     <td><input type="number" class="cart-quantity" name="quantity" value=1 min="1" style="width: 40px;"></td>
     <td class='d-flex'><button onClick="removeFromCart(this)" type="button" class="close" aria-label="Close">
      <span aria-hidden="true">&times;</span>
    </button></td>
   </tr>`)
-  update_total()
+    update_total()
+    save_product_changes()
     
 }
 
 function update_total(e) {
     var total = 0;
-    console.log("update?")
-    $('.prod_info').each(function() {
+    $('.prod_info').each(function () {
         var quantity = parseInt($(this).find('.cart-quantity').val()); // 'this' refers to the input field
-        var price = parseFloat($(this).closest('.prod_info').find('.cart_prod_price').text().replace('$', ''));
+        var price = parseFloat($(this).find('.cart_prod_price').text().replace('$', ''));
         console.log("price ?", price, " quantity: ", $(this).find('.cart-quantity').val())
         total += quantity * price;
       });
       $('#total').text('$' + total.toFixed(2));
     
- }
+}
+ 
+function save_product_changes() {
+    var products = [];
+    console.log("storage contains anything? ", products);
+    $('.prod_info').each(function () {
+        var product_data = {
+            name: $(this).find(".cart_prod_name").text(),
+            price: parseFloat($(this).find(".cart_prod_price").text().replace('$', '')),
+            quantity: parseInt($(this).find(".cart-quantity").val()),
+            img_url: $(this).find(".cart-img").attr("src")
+        };
+        products.push(product_data);
+
+    })
+    console.log("my storage products: ", products)
+    localStorage.setItem('cart_prod', JSON.stringify(products));
+}
+    
 
 $(document).on('input', '.cart-quantity', function() {
-     update_total();
+    update_total();
+    save_product_changes();
   });
   
 
