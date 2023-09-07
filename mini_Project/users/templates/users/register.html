@@ -1,14 +1,124 @@
-{% extends "products/base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 
-{% block content %}
-<div class="container">
-    <h1>Register Customer</h1>
-    <form method="post">
-        {% csrf_token %}
-        {% crispy form %}
-        {{ form.errors }}
 
-    </form>
-</div>
-{% endblock %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Registeration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" href="{% static 'products/images/fevicon/fevicon.png' %}" type="image/gif" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<link rel="stylesheet" href="{% static 'products/css/bootstrap/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/mdb.min.css' %}">
+<link rel="stylesheet" href="{% static 'users/register.css' %}" />
+
+	</head>
+	<body>
+        <section class="vh-100 bg-image"
+        style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+          <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="card" style="border-radius: 15px;">
+                  <div class="card-body p-5">
+                    <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+      
+                    <form method="post" action="/register">
+                        {% csrf_token %}
+                      <div class="form-outline mb-4">
+                        <!-- <input type="text" id="form3Example1cg" class="form-control form-control-lg" /> -->
+                        <!-- <label class="form-label" for="form3Example1cg">Your Name</label> -->
+                    {{ form.username}}
+                    <label class="form-label" for="{{ form.username.id_for_label }}">Username</label>
+                    </div>
+      
+                      <div class="form-outline mb-4">
+                        <!-- <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example3cg">Your Email</label> -->
+                        {{ form.email}}
+                    <label class="form-label" for="{{ form.email.id_for_label }}">Email</label>
+                      </div>
+      
+                      <div class="form-outline mb-4">
+                        <!-- <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example4cg">Password</label> -->
+                        {{ form.password}}
+                    <label class="form-label" for="{{ form.password.id_for_label }}">Password</label>
+                      </div>
+      
+                      <div class="form-outline mb-4">
+                        <!-- <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example4cdg">Repeat your password</label> -->
+                        {{ form.phone}}
+                        <label class="form-label" for="{{ form.phone.id_for_label }}">Phone</label>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <!-- <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example4cdg">Repeat your password</label> -->
+                        {{ form.address}}
+                        <label class="form-label" for="{{ form.address.id_for_label }}">Address</label>
+                      </div>
+      
+                      <div class="form-check d-flex justify-content-center mb-5">
+                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                        <label class="form-check-label" for="form2Example3g">
+                          I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                        </label>
+                      </div>
+      
+                      <div class="d-flex justify-content-center">
+                        <button type="submit"
+                          class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                      </div>
+                      
+
+                      
+
+                    
+                      {% if form.errors %}
+                      <ul class="alert alert-danger mb-4 mt-3" role="alert" id="error-message">
+                      {% for key,value in form.errors.items %} 
+                      {{ value|escape }}
+                      {% endfor %}
+                      </ul>
+                      
+                    {% endif %}
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if 'success' in message.tags %}
+                                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    
+                      
+                      <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                          class="fw-bold text-body"><u>Login here</u></a></p>
+      
+                    </form>
+      
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <script src="{% static 'products/js/jquery.min.js' %}"></script>    
+    <script src="{% static 'products/js/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'products/js/mdb.min.js' %}"></script>
+    
+  
+	</body>
+</html>
+

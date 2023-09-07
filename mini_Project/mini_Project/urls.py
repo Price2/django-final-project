@@ -29,7 +29,6 @@ urlpatterns = [
     path('', products_views.home, name='home'),
     path('checkout', products_views.checkout, name='checkout'),
     path('thanks', products_views.thanks, name='thanks'),
-    path('thankyou', products_views.thankyou, name='thankyou'),
 ]
 
 if settings.DEBUG:

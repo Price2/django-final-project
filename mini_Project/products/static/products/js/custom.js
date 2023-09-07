@@ -186,12 +186,10 @@ tpj(document).ready(function() {
 
 });
 
-// script.js
-$(document).ready(function() {  
-    $('#cartModal').modal('show');
-});
+
 
 function isEmpty() {
+    console.log("empty? ", $(".cart-body").children().length === 0)
     return $(".cart-body").children().length === 0
 }
 
@@ -203,7 +201,7 @@ var itemCount = 0;
           var prod_price = $(this).closest(".product_list").find('.prod_price').text();
           var prod_img = $(this).closest(".product_list").find(".prod_img").attr("src");
           
-        // console.log("product price ", $(this).closest(".product_list").find('.prod_price').text()    )
+        console.log("add to cart? ")
         addToCart({ "prod_name": prod_name, "prod_price": prod_price, "prod_img_url": prod_img })
         itemCount++;
         $("#cart-counter").text(itemCount);
@@ -226,14 +224,7 @@ var itemCount = 0;
            </tr>
          </thead>
          <tbody class="cart-body">
-           <!-- <tr>
-             <td><img class="img-fluid" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGljfGVufDB8fDB8fHww&w=1000&q=80" alt=""></td>
-             <th scope="row">1</th>
-             <td>100$</td>
-             <td class='d-flex'><button type="button" class="close" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button></td>
-           </tr> -->
+          
          </tbody>
             <td class="emptycart_text" colspan="5"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
             $('#checkoutBtn').prop("disabled", true);
@@ -248,22 +239,8 @@ var itemCount = 0;
     })
     
       update_total();
-
-    //   $('#checkoutBtn').click(function (e) { 
-    //     $.ajax({
-    //         url: "/checkout", // Replace with your API endpoint
-    //         method: "GET",
-    //         success: function(data) {
-    //           // Handle the successful response
-    //           $("#output").html(data); // Display the data on the page
-    //         },
-    //         error: function(jqXHR, textStatus, errorThrown) {
-    //           // Handle errors here
-    //           console.error("AJAX error:", textStatus, errorThrown);
-    //         }
-    //       });
-        
-    //   });
+    load_cart();
+  
 });
 function cartEmptyText() {
     $(".table-hover").append(`<td class="emptycart_text" colspan="5"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
@@ -319,7 +296,7 @@ function save_product_changes() {
     $('.prod_info').each(function () {
         var product_data = {
             name: $(this).find(".cart_prod_name").text(),
-            price: parseFloat($(this).find(".cart_prod_price").text().replace('$', '')),
+            price: parseFloat($(this).find(".cart_prod_price").text().replace('$', '')).toFixed(2),
             quantity: parseInt($(this).find(".cart-quantity").val()),
             img_url: $(this).find(".cart-img").attr("src")
         };
@@ -336,9 +313,47 @@ $(document).on('input', '.cart-quantity', function() {
     save_product_changes();
   });
   
+function load_cart() {
+    if (localStorage.getItem('cart_prod')) {
+        // Retrieve the data as a string from local storage
+        const dataString = localStorage.getItem('cart_prod');
+      
+        try {
+            // Parse the data string into an array of objects
+            const dataArray = JSON.parse(dataString);
+            itemCount = dataArray.length;
+            update_cart(dataArray)
 
+     
+        } catch (error) {
+            console.error('Error parsing data from local storage:', error);
+        }
+    } else {
+        console.log('Data not found in local storage');
+    }
+}
 
-/**===== End slider =====**/
+function update_cart(products, removeFromCart) {
+    console.log("products: " ,products)
+    const product_body = $('.cart-body')
+    console.log("body: ", product_body)
+    products.forEach(product => {
+        $('.cart-body').append(`<tr class="prod_info">
+      <td class="w-25"><img class="img-fluid w-75 cart-img" src="${product.img_url}" alt=""></td>
+      <th scope="row" class="cart_prod_name">${product.name}</th>
+      <td class="cart_prod_price">$${product.price}</td>
+      <td><input type="number" class="cart-quantity" name="quantity" value=1 min="1" style="width: 40px;"></td>
+      <td class='d-flex'><button onClick="removeFromCart(this)" type="button" class="close" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+     </button></td>
+    </tr>`)
+  
+    })
+    $("#cart-counter").text(products.length)
+    update_total()
+  }
+
+/**===== End cart =====**/
 	
 	
 /** header fixed js **/

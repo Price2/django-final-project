@@ -39,7 +39,7 @@ def logIn(request):
                 print("Login? ", request.user.username, " email: ", request.user.email)
                 return HttpResponse("Thanks for logging in")
             else:
-                error_message = "Invalid email/password, please check your credentials and try again."
+                error_message = "Invalid email/password"
                 messages.error(request, error_message)
                
                 # return render(request, 'users/login.html')
@@ -56,6 +56,7 @@ def register(request):
         form = CustomerForm(request.POST)
         if form.is_valid():
             # Hash the password
+            print("success saving customer")
             password = form.cleaned_data['password']
             hashed_password = make_password(password)
 
@@ -69,8 +70,10 @@ def register(request):
             )
             # Save the user
             customer.save()
-            return HttpResponse("Thanks for registering")
-        
+            form = CustomerForm()
+            print("success saving customer")
+            messages.success(request, 'Your registration was successful, please Login to proceed!')
+            return render(request, "users/register.html", {'form': form})
     else:
         form = CustomerForm()
     return render(request, "users/register.html", {'form': form})

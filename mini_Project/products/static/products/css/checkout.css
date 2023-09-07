@@ -14,3 +14,11 @@
     margin-right: 30px;
     font-weight: 700;
   }
+
+  .fa-trash{
+    color: #343a40!important;
+  }
+
+  .fa-trash:hover{
+    color:#2b2f31!important;
+  }
