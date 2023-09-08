@@ -10,7 +10,7 @@ new WOW().init();
 
 /**== loader js ==*/
 
-$(window).load(function() {
+$(window).on('load',function() {
     $(".bg_load").fadeOut("slow");
 })
 

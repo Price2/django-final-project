@@ -7,6 +7,7 @@ from django.http import JsonResponse
 
 def home(request):
     products = Product.objects.all()
+    print(f'products {products[0].category}')
     return render(request, 'products/home.html', {'products': products})
 
 def checkout(request):

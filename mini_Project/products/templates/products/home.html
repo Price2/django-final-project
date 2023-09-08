@@ -1,21 +1,30 @@
 {% extends 'products/base.html' %}
 {% load static %}
 {% block content %}
+{% load filters %}
 <div class="section padding_layout_1 product_list_main">
   <div class="container">
     <div class="row">
       <div class="col-md-9">
         <div class="row">
           {% for product in products %}
-          <div class="col-md-4 col-sm-6 col-xs-12 margin_bottom_30_all ">
+          <div class="col-md-4 col-sm-6 col-xs-12 margin_bottom_30_all product-details">
             <div class="product_list h-100 card border-0">
-              <div class="product_img">
-                 <img class="img-responsive prod_img"
+              <div class="product_img h-100">
+                 <img class="img-responsive prod_img h-100"
                   src="{{ product.image.url}}" alt>
-              </div>
+                  
+                </div>
+                <!-- <div class="d-flex justify-content-center align-items-center mt-4">
+                  <p style="color:#757575;font-size: .875em;">{{ product.category|split_word:"("|first }}</p>
+
+                </div> -->
               <div class="product_detail_btm card-body">
-                <div class="center">
-                  <h4><a href="#" class="prod_name">{{ product.name_en }}</a></h4>
+                  <div class="center d-flex flex-column align-items-center justify-content-center ">
+                    <h4><a href="#" class="prod_name">{{ product.name_en }}</a></h4>
+                    <p style="color:#757575;font-size: .875em;" class="prod-category">{{ product.category|split_word:"("|first }}</p>
+                    
+                  <!-- <p class="fw-bold text-black">{{ product.category|split_word:"(" }}</p> -->
                 </div>
                 <div class="starratin">
                   <div class="center"> <i class="fa fa-star" aria-hidden="true"></i>
@@ -49,13 +58,35 @@
             <h4>SEARCH</h4>
             <div class="side_bar_search">
               <div class="input-group stylish-input-group">
-                <input class="form-control" placeholder="Search" type="text">
+                <input class="form-control search-products" placeholder="Search" type="text">
                 <span class="input-group-addon">
                   <button type="submit"><i class="fa fa-search"
                       aria-hidden="true"></i></button>
                 </span> </div>
             </div>
           </div>
+          <div class="row mb-3 categary" id="myItems">
+            <div class="col-sm-12 mb-3">
+              <div class="card bg-light">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h5 class="card-title text-center">Filter</h5>
+                    <button class="btn btn-sm reset-filter mt-0" style="min-width: 1em;"><i class="fa-solid fa-x fa-xs me-2" style="vertical-align: middle;"></i>Reset</button>
+                  </div>
+                  <hr>
+                  {% for product in products %}
+                    <label class="d-flex align-items-center gap-3 filter-item">
+                      <img class="filter-img" src="{% static 'products/images/placeholder.png' %}"/>
+                      <span class="filter-category-text">{{ product.category|split_word:"("|first }}</span>
+                    </label><br>
+                    {% endfor %}
+                    <!-- <span class="filter-category-text">Central Processing Units</span><br> 
+                    <span class="filter-category-text">Power Supply Units</span><br>                      -->
+                   
+                  </div>
+                </div>
+                </div>
+                </div>
           <div class="side_bar_blog">
             <h4>GET A QUOTE</h4>
             <p>An duo lorem altera gloriatur. No imperdiet adver sarium pro. No
@@ -63,6 +94,7 @@
             <a class="btn sqaure_bt" href="it_service.html">View Service</a>
           </div>
           <div class="side_bar_blog">
+
             <h4>OUR SERVICE</h4>
             <div class="categary">
               <ul>
