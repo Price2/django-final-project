@@ -3,5 +3,9 @@
     "docwriter.progress.trackFunctions": true,
     "docwriter.progress.trackMethods": true,
     "docwriter.progress.trackClasses": true,
-    "docwriter.progress.trackTypes": false
+    "docwriter.progress.trackTypes": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none"
 }

@@ -1,12 +1,14 @@
 from django.forms import modelform_factory
 from .models import Customer
 from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
-
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.shortcuts import render, redirect
 from .forms import LoginForm, CustomerForm
 from django.contrib.auth.hashers import make_password
+from django.views.decorators.csrf import csrf_exempt
 
 
 """
@@ -19,32 +21,31 @@ the user's IP address, and any data sent with the request
 :return: a rendered HTML template called 'users/login.html' with the form variable passed as
 context.
 """
-def logIn(request):
-    # CustomerForm = modelform_factory(Customer, fields=['username', 'password', 'email', 'phone', 'address'])
-
+def login_user(request):
+    print("LOGIN PAGE")
     if request.method == "POST":
         form = LoginForm(request.POST)
-        print("testing before valid")
+        print(f"is form valid?")
         if form.is_valid():
-            print("testing after valid")
+            print('is valid?')
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            try:
-                customer = Customer.objects.get(email__exact=email, is_active=True)
-            except Customer.DoesNotExist:
-                customer = None
-            print(f"checking customer {customer}")
-            if customer and customer.check_password(password):
-                login(request, customer)
+
+            user = authenticate(request, username=email, password=password)
+            if user is not None:
+                # Login the user
+                login(request, user)
                 print("Login? ", request.user.username, " email: ", request.user.email)
-                return HttpResponse("Thanks for logging in")
+                print("logged in successfully? ", request.user.is_authenticated)
+                print("any errors ? ", form.errors)
+                return redirect("home")
             else:
                 error_message = "Invalid email/password"
                 messages.error(request, error_message)
-               
                 # return render(request, 'users/login.html')
     else:
         form = LoginForm()
+        print("i reached here ")
     return render(request, 'users/login.html', {'form': form})
 
 
@@ -77,3 +78,18 @@ def register(request):
     else:
         form = CustomerForm()
     return render(request, "users/register.html", {'form': form})
+
+
+
+def check_login_status(request):
+    print(f'logged in? {request.user.is_authenticated}')
+    if request.user.is_authenticated:
+        print("is user authenticated?")
+        return JsonResponse({'is_authenticated': True})
+    else:
+        return JsonResponse({'is_authenticated': False})
+
+@csrf_exempt
+def logout_user(request):
+    logout(request)
+    return redirect('products') 

@@ -36,9 +36,18 @@
 <link rel="stylesheet" href="{% static 'products/css/checkout.css' %}" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
 <link rel="stylesheet" href="{% static 'products/css/bootstrap/bootstrap.min.css' %}">
 
+<link rel="stylesheet" href="{% static 'products/css/mdb.min.css' %}">
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css" rel="stylesheet">
+
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}" />
+
+
 </head>
 <body id="default_theme" class="it_shop_list">
   
@@ -50,7 +59,7 @@
   <!-- header top -->
   <div class="header_top">
     <div class="container">
-      <div class="row header-row">
+      <div class="row header-row justify-content-between">
         <div class="col-md-6">
           <div class="full">
             <div class="topbar-left">
@@ -61,7 +70,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 right_section_header_top d-flex align-items-center">
+        <div class="col-md-6 right_section_header_top d-flex justify-content-end align-items-center gap-5">
             <div class="social-media-icons">
               <a href="https://www.facebook.com/" target="_blank">
                   <i class="fab fa-facebook-f"></i>
@@ -76,8 +85,10 @@
           </div>
           <div class="login-register-btn">
             <div class="make_appo">
-               <button class="btn btn-primary m-0" href="/login">Login</button> 
-               <button class="btn btn-dark m-0" href="/register">Register</button> 
+               <a id="login" href="/users/login"><button class="btn btn-primary m-0 authentication-btn under text-decoration-underline">Login</button> </a>
+               <a id="register" href="/users/register"><button class="btn btn-dark m-0 authentication-btn">Register</button> </a>
+               <a id="logout" class="ml-3" href="/users/logout" style="text-decoration:underline!important; color:gray"><button class="btn btn-info m-0 authentication-btn text-decoration-underline">Logout</button></a>
+
               </div>
             <!-- <div class="make_appo">  -->
           </div>
@@ -92,7 +103,7 @@
       <div class="row">
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
           <!-- logo start -->
-          <div class="logo"> <a href="it_home.html"><img src="{% static 'products/images/logos/it_logo.png' %}" alt="logo" /></a> </div>
+          <div class="logo"> <a href="/"><img src="{% static 'products/images/logos/it_logo.png' %}" alt="logo" /></a> </div>
           <!-- logo end -->
         </div>
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
@@ -100,18 +111,18 @@
           <div class="menu_side">
             <div id="navbar_menu">
               <ul class="first-ul">
-                <li> <a href="/">Home</a>
+                <li> <a href="/products/">Home</a>
                 </li>
              
-                <li> <a class="active" href="it_shop.html">Shop</a>
+                <li> <a class="active" href="/products/shop">Shop</a>
                 </li>
               </ul>
             </div>
             <div class="search_icon">
               <ul>
-                  <li><a href="#" data-toggle="modal" data-target="#search_bar"><i class="fa fa-search mr-3" aria-hidden="true"></i></a></li>
+                
                   <li class="cart-icon" id="cart-icon">
-                    <a href="#" data-toggle="modal" data-target="#modalCart">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalCart">
                         <div class="cart-container" style=" display: flex;
                         align-items: center;
                         position: relative;">
@@ -138,7 +149,7 @@
                 </li>
               </ul>
           </div>
-          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCart">Launch modal</button>
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCart">Launch modal</button> -->
         
         
           
@@ -160,8 +171,8 @@
             <div class="title-holder-cell text-left">
               <h1 class="page-title">{% block page_header_title %}{% endblock %}</h1>
               <ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li class="active">Shop</li>
+                <li><a href="/">Home</a></li>
+                <li class="active" href="/products">Shop</li>
               </ol>
             </div>
           </div>
@@ -175,9 +186,7 @@
 {% block content %}
 
 {% endblock %}
- <!-- Modal: modalCart -->
- <!-- <form method="post"> -->
-  <!-- {% csrf_token %} -->
+
 
  <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
  aria-hidden="true">
@@ -186,14 +195,14 @@
      <!--Header-->
      <div class="modal-header">
        <h4 class="modal-title" id="myModalLabel">Your cart</h4>
-       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-         <span aria-hidden="true">×</span>
+       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+         <!-- <span aria-hidden="true"></span> -->
        </button>
      </div>
      <!--Body-->
      <div class="modal-body">
 
-       <table class="table table-hover">
+       <table class="table table-hover equal-height-table">
          <thead>
            <tr>
              <th>#</th>
@@ -223,51 +232,27 @@
         <p class="align-self-end font-weight-bold" id="total" style="color:black"></p>
 
        <div class="d-flex  w-100">
-        <a class="w-100" href="/checkout" style="text-decoration: none; color:white"><button class="btn btn-primary w-100" id="checkoutBtn">Checkout</button></a>
-         <!-- <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button> -->
+        <button class="btn btn-primary w-100" id="checkoutBtn"><a class="w-100" href="/products/checkout" style="text-decoration: none; color:white">Checkout</a></button>
        </div>
      </div>
    </div>
  </div>
 </div>
-<!-- </form> -->
-<!-- end section -->
-<!-- Modal -->
-<!-- <div class="modal fade" id="search_bar" role="dialog">
-  <div class="modal-dialog"> -->
-    <!-- Modal content-->
-    <!-- <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2 col-xs-10 col-xs-offset-1">
-            <div class="navbar-search">
-              <form action="#" method="get" id="search-global-form" class="search-global">
-                <input type="text" placeholder="Type to search" autocomplete="off" name="s" id="search" value="" class="search-global__input">
-                <button class="search-global__btn"><i class="fa fa-search"></i></button>
-                <div class="search-global__note">Begin typing your search above and press return to search.</div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- End Model search bar -->
+
+
+
+
 <!-- footer -->
 <footer class="footer_style_2">
   <div class="container-fuild">
     <div class="row">
-      <div class="map_section">
+      <div class="map_section col-md-4">
         <div id="map">
           <div style="width: 100%"><iframe width="100%" height="700px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/population/">Population Estimator map</a></iframe></div>
           
         </div>
       </div>
-      <div class="footer_blog">
+      <div class="footer_blog col-md-8">
         <div class="row">
           <div class="col-md-6">
             <div class="main-heading left_text">
@@ -285,11 +270,11 @@
               <h2>Additional links</h2>
             </div>
             <ul class="footer-menu">
-              <li><a href="it_about.html"><i class="fa fa-angle-right"></i> About us</a></li>
-              <li><a href="it_term_condition.html"><i class="fa fa-angle-right"></i> Terms and conditions</a></li>
-              <li><a href="it_privacy_policy.html"><i class="fa fa-angle-right"></i> Privacy policy</a></li>
-              <li><a href="it_news.html"><i class="fa fa-angle-right"></i> News</a></li>
-              <li><a href="it_contact.html"><i class="fa fa-angle-right"></i> Contact us</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> About us</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Terms and conditions</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Privacy policy</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> News</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Contact us</a></li>
             </ul>
           </div>
           <div class="col-md-6">
@@ -297,11 +282,11 @@
               <h2>Services</h2>
             </div>
             <ul class="footer-menu">
-              <li><a href="it_data_recovery.html"><i class="fa fa-angle-right"></i> Data recovery</a></li>
-              <li><a href="it_computer_repair.html"><i class="fa fa-angle-right"></i> Computer repair</a></li>
-              <li><a href="it_mobile_service.html"><i class="fa fa-angle-right"></i> Mobile service</a></li>
-              <li><a href="it_network_solution.html"><i class="fa fa-angle-right"></i> Network solutions</a></li>
-              <li><a href="it_techn_support.html"><i class="fa fa-angle-right"></i> Technical support</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Data recovery</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Computer repair</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Mobile service</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Network solutions</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Technical support</a></li>
             </ul>
           </div>
           <div class="col-md-6">
@@ -324,12 +309,11 @@
           </div>
         </div>
       </div>
-      <!-- <div class="cprt">
-        <p>ItNext © Copyrights 2019 Design by html.design</p>
-      </div> -->
+
     </div>
   </div>
 </footer>
+
 <!-- end footer -->
 <!-- js section -->
 <!-- <script src="{% static 'products/js/jquery.min.js' %}"></script> -->
@@ -337,19 +321,21 @@
 <!-- <script src="{% static 'products/js/bootstrap.min.js' %}"></script> -->
 
 <script src="{% static 'products/js/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'products/js/mdb.min.js' %}"></script>
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script> -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.js"></script>
 <!-- menu js -->
 <script src="{% static 'products/js/menumaker.js' %}"></script>
 <!-- wow animation -->
 <script src="{% static 'products/js/wow.js' %}"></script>
 <!-- custom js -->
-<script src="{% static 'products/js/custom.js' %}"></script>
 <!-- checkout page js -->
 <script src="{% static 'products/js/checkout.js' %}"></script>
 
 <script src="{% static 'products/js/filter.js' %}"></script>
+<script src="{% static 'products/js/custom.js' %}"></script>
 
 </body>
 </html>

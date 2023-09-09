@@ -6,15 +6,15 @@ from crispy_forms.layout import Layout, Field
 from .models import Customer
 
 
-class LoginForm(forms.ModelForm):
-    class Meta:
-        model = Customer
-        fields = ['password' ,'email']
-        widgets = {
-            'password': forms.PasswordInput(attrs={'id':'password', 'placeholder':'Enter your password', 'class': 'form-control'}),
-            'email': forms.EmailInput(attrs={'id':'email', 'placeholder':'Enter your email address', 'class': 'form-control'}),
-        }
-     
+class LoginForm(forms.Form):
+    email = forms.EmailField(
+        widget=forms.EmailInput(attrs={'id': 'email', 'placeholder': 'Enter your email address', 'class': 'form-control'}),
+        required=True
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'id': 'password', 'placeholder': 'Enter your password', 'class': 'form-control'}),
+        required=True
+    )
 
     def __init__(self, *args, **kwargs):
         super(LoginForm, self).__init__(*args, **kwargs)
@@ -23,7 +23,6 @@ class LoginForm(forms.ModelForm):
         self.helper.layout = Layout(
             Field('email', css_class='form-control'),
             Field('password', css_class='form-control'),
-        # Submit('submit', 'Login', css_class='btn btn-primary btn-block fa-lg gradient-custom-2 mb-3')
         )
         self.fields['email'].required = True
 

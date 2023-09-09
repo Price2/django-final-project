@@ -16,8 +16,10 @@ class Admin(AbstractUser):
         return self.username
 
 class Customer(AbstractUser):
+    
     class Meta:
-        verbose_name_plural = 'Customer'
+        verbose_name_plural = 'Customer'    
+    USERNAME_FIELD = 'email'
     username = models.CharField(
         max_length=150,
         unique=False,

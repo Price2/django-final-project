@@ -184,14 +184,12 @@ tpj(document).ready(function() {
         });
     }
 
+
+
+   
 });
 
 
-
-function isEmpty() {
-    console.log("empty? ", $(".cart-body").children().length === 0)
-    return $(".cart-body").children().length === 0
-}
 
 var itemCount = 0;
   $(document).ready(function () {
@@ -238,10 +236,19 @@ var itemCount = 0;
         }
     })
     
-      update_total();
+    update_total();
     load_cart();
-  
-});
+    checkLoginStatus();
+
+  });
+
+
+function isEmpty() {
+    console.log("empty? ", $(".cart-body").children().length === 0)
+    console.log("body of cart ", $(".cart-body").children())
+    return $(".cart-body").children().length === 0
+}
+
 function cartEmptyText() {
     $(".table-hover").append(`<td class="emptycart_text" colspan="5"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">Your cart is empty!</h2></td>`)
 }
@@ -264,14 +271,14 @@ function removeFromCart(e) {
 
 }
 function addToCart(product, removeFromCart){
-    $(".cart-body").append(`<tr class="prod_info">
-    <td class="w-25"><img class="img-fluid w-75 cart-img" src="${product.prod_img_url}" alt=""></td>
+    $(".cart-body").append(`<tr class="prod_info equal-height-row">
+    <td class="w-25"><img class="img-fluid w-75 cart-img equal-height-cell" src="${product.prod_img_url}" alt=""></td>
     <th scope="row" class="cart_prod_name">${product.prod_name}</th>
-    <td class="cart_prod_price">${product.prod_price}</td>
-    <td><input type="number" class="cart-quantity" name="quantity" value=1 min="1" style="width: 40px;"></td>
-    <td class='d-flex'><button onClick="removeFromCart(this)" type="button" class="close" aria-label="Close">
-     <span aria-hidden="true">&times;</span>
-   </button></td>
+    <td class="cart_prod_price equal-height-cell">${product.prod_price}</td>
+    <td><input type="number" class="cart-quantity equal-height-cell" name="quantity" value=1 min="1" style="width: 40px;"></td>
+    <td onClick="removeFromCart(this)">
+    <i class="fa-solid fa-trash equal-height-cell" style="cursor:pointer;"></i>
+   </td>
   </tr>`)
     update_total()
     save_product_changes()
@@ -338,20 +345,46 @@ function update_cart(products, removeFromCart) {
     const product_body = $('.cart-body')
     console.log("body: ", product_body)
     products.forEach(product => {
-        $('.cart-body').append(`<tr class="prod_info">
+        $('.cart-body').append(`<tr class="prod_info"style=" flex: 1!important;
+        margin: 5px!important;">
       <td class="w-25"><img class="img-fluid w-75 cart-img" src="${product.img_url}" alt=""></td>
       <th scope="row" class="cart_prod_name">${product.name}</th>
       <td class="cart_prod_price">$${product.price}</td>
       <td><input type="number" class="cart-quantity" name="quantity" value=1 min="1" style="width: 40px;"></td>
-      <td class='d-flex'><button onClick="removeFromCart(this)" type="button" class="close" aria-label="Close">
-       <span aria-hidden="true">&times;</span>
-     </button></td>
+      <td onClick="removeFromCart(this)">
+    <i class="fa-solid fa-trash" style="cursor:pointer;"></i>
+   </td>
     </tr>`)
   
     })
     $("#cart-counter").text(products.length)
     update_total()
+}
+  
+
+function checkLoginStatus() {
+    console.log("checking?")
+    $.ajax({
+      url: '/check_login_status', // Replace with the actual URL
+      method: 'GET',
+      success: function (data) {
+          if (data.is_authenticated) {
+            console.log("authenticated?")
+          // User is logged in
+            $('#login').hide();
+            $('#register').hide();
+            $('#logout').show();
+        } else {
+          // User is not logged in
+            $('#login').show();
+            $('#register').show();
+          $('#logout').hide();
+        }
+      },
+    });
   }
+
+
 
 /**===== End cart =====**/
 	

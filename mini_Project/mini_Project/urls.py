@@ -19,16 +19,23 @@ from django.urls import path
 from users import views as users_views
 from products import views as products_views
 from django.conf import settings
+from django.urls import include
+
 from django.conf.urls.static import static
 # from users import views
 # from products import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login', users_views.logIn, name='login'),
-    path('register', users_views.register, name='register'),
     path('', products_views.home, name='home'),
-    path('checkout', products_views.checkout, name='checkout'),
-    path('thanks', products_views.thanks, name='thanks'),
+    path('users/', include('users.urls')),
+    path('products/', include('products.urls')),
+    # path('products', products_views.products, name='home'),
+    # path('checkout', products_views.checkout, name='checkout'),
+    # path('login', users_views.logIn, name='login'),
+    # path('register', users_views.register, name='register'),
+    # path('thanks', products_views.thanks, name='thanks'),
+    path('check_login_status', users_views.check_login_status, name='check_login_status'),
+
 ]
 
 if settings.DEBUG:

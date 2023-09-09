@@ -29,28 +29,23 @@
                     <div class="text-center">
                       <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
                         style="width: 185px;" alt="logo">
-                      <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                      <h4 class="mt-1 mb-5 pb-1">Login</h4>
                     </div>
     
-                    <form method="post" action="/login">
+                    <form method="post" action="/users/login">
                       {% csrf_token %}
 
                       <p>Please login to your account</p>
     
                       <div class="form-outline mb-4">
-                        <!-- <input type="email" id="form2Example11" class="form-control"
-                          placeholder="Phone number or email address" /> -->
                           {{ form.email }}
                           <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
 
-                        <!-- <label class="form-label" for="email">Email</label> -->
                       </div>
     
                       <div class="form-outline mb-4">
-                        <!-- <input type="password" id="form2Example22" class="form-control" /> -->
                         {{ form.password }}
                         <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
-                        <!-- <label class="form-label" for="password">Password</label> -->
                       </div>
     
                       <div class="text-center pt-1 mb-5 pb-1">
@@ -61,9 +56,14 @@
     
                       <div class="d-flex align-items-center justify-content-center pb-4">
                         <p class="mb-0 me-2">Don't have an account?</p>
-                        <a href="/register" style="text-decoration: none;"><button type="button" class="btn btn-outline-danger registerBtn">Create new</button></a>
+                        <a href="/users/register" style="text-decoration: none;"><button type="button" class="btn btn-outline-danger registerBtn">Create new</button></a>
                       </div>
-    
+                      
+                      <div class="d-flex justify-content-center align-items-center">
+                        <a href="/products" class="d-flex align-items-center gap-3" style="color:black; text-decoration: none;"><i class="fa-solid fa-arrow-left" style="color: #000000;"></i>Back Home</a>
+
+                      </div>
+
                     </form>
                     {% if messages %}
                     <div class="error-container">

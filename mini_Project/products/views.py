@@ -7,11 +7,21 @@ from django.http import JsonResponse
 
 def home(request):
     products = Product.objects.all()
-    print(f'products {products[0].category}')
+    print("authenticated home? ", request.user)
     return render(request, 'products/home.html', {'products': products})
 
+def products(request):
+    products = Product.objects.all()
+    print("am i authenticated products? ", request.user.is_authenticated)
+    return render(request, 'products/products.html', {'products': products})
+
 def checkout(request):
-    return render(request, 'products/checkout.html')
+    print("checkout?")
+    if request.user.is_authenticated:
+        return render(request, 'products/checkout.html')
+    else:
+        print("checkout unauthenticated?")
+        return redirect('login')
 
 
 

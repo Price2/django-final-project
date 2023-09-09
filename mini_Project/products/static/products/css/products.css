@@ -55,3 +55,43 @@
     margin-right: 3px;
     --element-margin-right: 3px;
 }
+
+
+#slider-round {
+    height: 10px;
+}
+
+#slider-round .noUi-connect {
+    background: #c0392b;
+}
+
+#slider-round .noUi-handle {
+    height: 18px;
+    width: 18px;
+    top: -5px;
+    right: -9px; /* half the width */
+    border-radius: 9px;
+}
+
+.noUi-handle:before, .noUi-handle:after {
+    display: none;
+    }
+
+    .equal-height-row {
+        display: flex!important;
+        align-items: stretch!important;
+        justify-content: space-between!important;
+        border-bottom: 1px solid #ddd!important; /* Optional: Add a border between rows */
+    }
+    .equal-height-cell {
+        flex: 1!important;
+        padding: 8px!important; /* Adjust as needed */
+        border: 1px solid #ddd!important; /* Optional: Add cell borders */
+        text-align: center!important; /* Adjust text alignment as needed */
+        vertical-align: middle!important;
+    }
+    
+    /* Optional: Highlight the last row with a different background color */
+    .equal-height-row:last-child {
+        background-color: #f2f2f2;
+    }
