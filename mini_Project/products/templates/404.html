@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Page not found</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+
+        <link rel="icon" href="{% static 'products/images/404_icon.png' %}" type="image/gif" />
+
+        <link rel="stylesheet" href="{% static 'products/css/bootstrap/bootstrap.min.css' %}">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'products/css/display_404.css' %}" />
+    
+    </head>
+    <body>
+       
+	<div id="notfound">
+		<div class="notfound">
+			<div class="notfound-404">
+				<h1>Oops!</h1>
+			</div>
+			<h2>404 - Page not found</h2>
+			<p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
+			<a href="/products/">Go To Homepage</a>
+		</div>
+	</div>
+
+        
+    <script src="{% static 'products/js/bootstrap/bootstrap.min.js' %}"></script>
+</body>
+</html>

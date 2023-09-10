@@ -1,35 +1,44 @@
-// $(document).ready(function () {
-//     $('#checkoutBtn').click(function (e) {
-//         // e.preventDefault(); // Prevent the default form submission behavior
 
-//         // Retrieve data from localStorage
-//         var cartData = localStorage.getItem('cart_prod');
+var sub_total = 0;
+var total = 0;
+var shipping = 10;
+$(document).ready(function () {
+    $('#placeOrder').click(function (e) {
+        // e.preventDefault(); // Prevent the default form submission behavior
 
-//         // Define the data to send in the POST request
-//         var postData = {
-//             cartData: cartData,
-//         };
-//         const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        // Retrieve data from localStorage
+        var cartData = JSON.parse(localStorage.getItem('cart_prod'));
 
-//         console.log("post data: ", postData)
-//         const request = new Request(
-//             '/checkout',
-//             {
-//                 method: 'POST',
-//                 headers: {
-//                     'X-CSRFToken': csrftoken,
-//                     'Content-Type': 'application/json',
-//                 },
-//                 mode: 'same-origin', // Do not send CSRF token to another domain.
-//                 body: JSON.stringify(postData)
-//             }
-//         );
-//         fetch(request).then(function(response) {
-//            console.log("success? ", response)
-//         });
+
+        // Define the data to send in the POST request
+        var postData = {
+          cartData: cartData,
+          total_price: total
+      };
+        console.log("total???? ", total)
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        console.log("post data: ", postData)
+        console.log("cart data: ", cartData)
+        const request = new Request(
+            '/products/order/success',
+            {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrftoken,
+                    'Content-Type': 'application/json',
+                },
+                mode: 'same-origin', // Do not send CSRF token to another domain.
+                body: JSON.stringify(postData)
+            }
+        );
+      fetch(request).then(function (response) {
+          console.log("success? ", response)
+          window.location.href = response.url;
+        });
        
-//     });
-// });
+    });
+});
 
 
 $(document).ready(function () {
@@ -74,40 +83,39 @@ $(document).ready(function () {
 
 
 
-    $("#placeOrder").on("click", function (e) {
-        e.preventDefault();
-        console.log("testing submit ")
-        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-        console.log("csrf? ", csrftoken)
-        const request = new Request(
-            'thanks',
-            {
-                method: 'POST',
-                headers: {'X-CSRFToken': csrftoken},
-                mode: 'same-origin' // Do not send CSRF token to another domain.
-            }
-        );
-      fetch(request).then(response => {
-        console.log("response url: " + response.url)
-        if (response.redirected) {
-            // Manually redirect the user to the new URL
-            window.location.href = response.url;
-        }
-        // Handle other responses if needed
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-    })
+    // $("#placeOrder").on("click", function (e) {
+    //     e.preventDefault();
+    //     console.log("testing submit ")
+    //     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    //     console.log("csrf? ", csrftoken)
+    //     const request = new Request(
+    //         'order/success',
+    //         {
+    //             method: 'POST',
+    //             headers: {'X-CSRFToken': csrftoken},
+    //             mode: 'same-origin' // Do not send CSRF token to another domain.
+    //         }
+    //     );
+    //   fetch(request).then(response => {
+    //     console.log("response url: " + response.url)
+    //         // Manually redirect the user to the new URL
+    //     if (response.url) {
+    //       window.location.href = response.url;
+    //     }    
+
+    //     // Handle other responses if needed
+    // })
+    // .catch(error => {
+    //     console.error('Error:', error);
+    // });
+    // })
     
     calc_sub_and_total()
 
 });
 
 function calc_sub_and_total(){
-  var sub_total = 0;
-  var total = 0;
-  var shipping = 10;
+
   $('.prod-review').each(function () {
     console.log("checking this ")
     var review_price = parseFloat($(this).find('.prod-review-price').text().replace('$', ''))
@@ -120,7 +128,6 @@ function calc_sub_and_total(){
   })
 
 }
-
 
 function removeFromReviewCart(e) {
   e.closest('.prod-review').remove()

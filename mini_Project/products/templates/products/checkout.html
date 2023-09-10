@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Checkout</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- responsive css -->
@@ -24,10 +24,11 @@
 <link rel="icon" href="{% static 'products/images/fevicon/fevicon.png' %}" type="image/gif" />
 
 <!-- bootstrap css -->
-<!-- <link rel="stylesheet" href="{% static 'products/css/bootstrap.min.css' %}" /> -->
+<link rel="stylesheet" href="{% static 'products/css/bootstrap/bootstrap.min.css' %}" />
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}" />
+<link rel="stylesheet" href="{% static 'products/css/checkout.css' %}" />
   </head>
   <body>
     <!-- loader -->
@@ -50,7 +51,6 @@
     
               <!-- Shopping cart table -->
               <div class="table-responsive">
-                <form method="post">
                 <table class="table review-cart-table">
                   {% csrf_token %}
                   <thead>
@@ -99,7 +99,7 @@
                 <div class="input-group mb-4 border rounded-pill p-2">
                   <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0">
                   <div class="input-group-append border-0">
-                    <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply coupon</button>
+                    <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill px-3 gap-3"><i class="fa fa-gift me-2"></i>Apply coupon</button>
                   </div>
                 </div>
               </div>
@@ -121,10 +121,9 @@
                     <h5 class="font-weight-bold" id="review-total"></h5>
                   </li>
                 </ul>
-                <div class="d-flex align-items-center mt-5">
+                <div class="d-flex justify-content-between align-items-center mt-5">
                   <a href="/" class="d-flex align-items-center" style="color:black; text-decoration: none;"><i class="fa-solid fa-arrow-left mr-3" style="color: #000000;"></i>Back</a>
-                  <button class="btn btn-dark rounded-pill py-2 btn-block d-flex justify-content-center align-items-center proceed-checkout mt-0 ml-5" type="submit" id="placeOrder">Procceed to checkout</button>
-                </form>
+                  <button class="btn btn-dark rounded-pill py-2 btn-block d-flex justify-content-center align-items-center proceed-checkout mt-0 ml-5 p-3" type="submit" id="placeOrder">Procceed to checkout</button>
                 </div>
               </div>
             </div>

@@ -196,10 +196,10 @@ var itemCount = 0;
       $(document).on("click", ".addToCart", function (e) {
           var prod_name = $(this).closest(".product_list").find(".prod_name").text();
             // var prod_price = $(this).closest(".product_detail_btm").find(".prod_price").text();
-          var prod_price = $(this).closest(".product_list").find('.prod_price').text();
+          var prod_price = $(this).closest(".product_list").find('.prod_price').text().replace('$', '');
           var prod_img = $(this).closest(".product_list").find(".prod_img").attr("src");
           
-        console.log("add to cart? ")
+        console.log("add to cart? ", prod_price)
         addToCart({ "prod_name": prod_name, "prod_price": prod_price, "prod_img_url": prod_img })
         itemCount++;
         $("#cart-counter").text(itemCount);
@@ -271,15 +271,16 @@ function removeFromCart(e) {
 
 }
 function addToCart(product, removeFromCart){
-    $(".cart-body").append(`<tr class="prod_info equal-height-row">
-    <td class="w-25"><img class="img-fluid w-75 cart-img equal-height-cell" src="${product.prod_img_url}" alt=""></td>
-    <th scope="row" class="cart_prod_name">${product.prod_name}</th>
-    <td class="cart_prod_price equal-height-cell">${product.prod_price}</td>
-    <td><input type="number" class="cart-quantity equal-height-cell" name="quantity" value=1 min="1" style="width: 40px;"></td>
-    <td onClick="removeFromCart(this)">
-    <i class="fa-solid fa-trash equal-height-cell" style="cursor:pointer;"></i>
+    $(".cart-body").append(`<tr class="prod_info"style=" flex: 1!important;
+        margin: 5px!important;">
+      <td class="w-25"><img class="img-fluid w-75 cart-img" src="${product.prod_img_url}" alt=""></td>
+      <th scope="row" class="cart_prod_name">${product.prod_name}</th>
+      <td class="cart_prod_price">$${product.prod_price}</td>
+      <td><input type="number" class="cart-quantity" name="quantity" value=1 min="1" style="width: 40px;"></td>
+      <td onClick="removeFromCart(this)">
+    <i class="fa-solid fa-trash" style="cursor:pointer;"></i>
    </td>
-  </tr>`)
+    </tr>`)
     update_total()
     save_product_changes()
     
