@@ -31,7 +31,6 @@
 <!-- wow Animation css -->
 <link rel="stylesheet" href="{% static 'products/css/animate.css' %}" />
 
-<link rel="stylesheet" href="{% static 'products/css/style.css' %}" />
 
 <link rel="stylesheet" href="{% static 'products/css/checkout.css' %}" />
 
@@ -44,6 +43,7 @@
 
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'products/css/style.css' %}" />
 
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}" />
 
@@ -111,17 +111,20 @@
           <div class="menu_side">
             <div id="navbar_menu">
               <ul class="first-ul">
-                <li> <a href="/products/">Home</a>
+                <li> <a id="home" class="menu-btn" href="/products/">Home</a>
                 </li>
              
-                <li> <a class="active" href="/products/shop">Shop</a>
+                <li> <a id="shop" class="menu-btn" href="/products/shop">Shop</a>
                 </li>
-              </ul>
-            </div>
-            <div class="search_icon">
-              <ul>
-                
-                  <li class="cart-icon" id="cart-icon">
+                <li> <a id="order" class="menu-btn" href="/products/order/history">Order History</a>
+                </li>
+                <li class="cart-icon" id="cart-icon">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#modalCart" class="d-flex align-items-center">
+                      <i class="fas fa-shopping-cart" style="font-size: 24px; margin-right: 5px;"></i>
+                      <span id="cart-counter" class="badge rounded-circle bg-danger">0</span>
+                  </a>
+              </li>
+                 <!-- <li class="cart-icon" id="cart-icon">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#modalCart">
                         <div class="cart-container" style=" display: flex;
                         align-items: center;
@@ -146,7 +149,38 @@
                                ">0</span>
                         </div>
                     </a>
-                </li>
+                </li> -->
+              </ul>
+            </div>
+            <div class="search_icon">
+              <ul>
+                
+                  <!-- <li class="cart-icon" id="cart-icon">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalCart">
+                        <div class="cart-container" style=" display: flex;
+                        align-items: center;
+                        position: relative;">
+                            <i class="fas fa-shopping-cart" style="font-size: 24px;
+                            margin-right: 5px;"></i>
+                               <span id="cart-counter" style="z-index: 2;
+                               font-size: 11px;
+                               border-radius: 50%;
+                               background: #d60b28;
+                               position:absolute;
+                               width: 16px;
+                               height: 16px;
+                               line-height:16px;
+                               display: block;
+                               text-align: center;
+                               color: white;
+                               font-family: 'Roboto', sans-serif;
+                               font-weight: bold;
+                               top: 10px;
+                              right: -2px;
+                               ">0</span>
+                        </div>
+                    </a>
+                </li> -->
               </ul>
           </div>
           <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCart">Launch modal</button> -->
@@ -325,7 +359,10 @@
 
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script> -->
 
+{% block scripts %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.js"></script>
+<script src="{% static 'products/js/filter.js' %}"></script>
+{% endblock %}
 <!-- menu js -->
 <script src="{% static 'products/js/menumaker.js' %}"></script>
 <!-- wow animation -->
@@ -334,7 +371,7 @@
 <!-- checkout page js -->
 <script src="{% static 'products/js/checkout.js' %}"></script>
 
-<script src="{% static 'products/js/filter.js' %}"></script>
+
 <script src="{% static 'products/js/custom.js' %}"></script>
 
 </body>

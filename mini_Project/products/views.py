@@ -116,6 +116,17 @@ def place_order(request):
             return HttpResponse(request, status=400)
 
 
+def order_history(request):
+    print("yea history")
+    if request.user.is_authenticated:
+            print(f"user? {request.user.id}")
+            order_hist = Order.objects.filter(customer_id=request.user.id)
+            if not order_hist:
+                return render(request, 'products/history.html', {'orders': []})
+            print(f"user? {request.user.id}")
+
+            return render(request, 'products/order_history.html', {'orders': order_hist})
+    return render(request, 'products/order_history.html', {'orders': []})
 
 def page_404(request, exception):
     print("am i even called?")

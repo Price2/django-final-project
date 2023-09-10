@@ -39,10 +39,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'products/revolution/css/settings.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'products/revolution/css/layers.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'products/revolution/css/navigation.css' %}" />
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
+<link rel="stylesheet" href="{% static 'products/css/mdb.min.css' %}">
+
 </head>
 <body id="default_theme" class="it_service">
 <!-- loader -->
@@ -105,10 +103,12 @@
           <div class="menu_side">
             <div id="navbar_menu">
               <ul class="first-ul">
-                <li> <a href="/products">Home</a>
+                <li> <a id="home" class="menu-btn" href="/products">Home</a>
                 </li>
              
-                <li> <a class="active" href="/products/shop">Shop</a>
+                <li> <a id="shop" class="menu-btn" href="/products/shop" >Shop</a>
+                </li>
+                <li> <a id="order" class="menu-btn" href="/products/order/history">Order History</a>
                 </li>
               </ul>
             </div>

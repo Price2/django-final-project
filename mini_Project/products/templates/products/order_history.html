@@ -1,0 +1,69 @@
+{% extends 'products/base.html' %}
+{% load filters %}
+{% load static %}
+{% block title %}Order History{% endblock %}
+{% block content %}
+<div class="pb-5">
+    <div class="container">
+        <div class="row" style="margin-top:40em;">
+            <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+                <!-- Shopping cart table -->
+                <div class="table-responsive">
+                    <table class="table order-history-table">
+                        {% csrf_token %}
+                        <thead>
+                            <tr>
+                                <!-- <th scope="col" class="border-0 bg-light">
+                                    <div class="p-2 px-3 text-uppercase">Product</div>
+                                </th> -->
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="p-2 px-3 text-uppercase">Product Name</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Order Date</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Order Total</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Status</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="order-history-body">
+                            {% for order in orders %}
+                            <tr class="prod_order_history">
+                                <td scope="row" class="border-0" rowspan="{{ order.orderdetails_set.count }}">
+                                    {% for order_detail in order.orderdetails_set.all %}
+                                    <div class="p-2">
+                                        <!-- <img src="{{ order_detail.product.image.url }}" alt="" width="70" class="img-fluid rounded shadow-sm prod-review-img"> -->
+                                        <div class="ml-3 d-inline-block align-middle">
+                                            <h5 class="mb-0"> <a href="#" class="fs-6 text-dark d-inline-block align-middle prod-review-name">{{order_detail.ordered_count}} x {{ order_detail.product.name_en }}</a></h5>
+                                            <span class="text-muted font-weight-normal font-italic d-block">Category: {{ order_detail.product.category.name|split_word:"("|first }}</span>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </td>
+                                <td class="border-0 align-middle">
+                                    <strong class="prod-review-quant">{{ order.createDate }}</strong>
+                                </td>
+                                <td class="border-0 align-middle">
+                                    <strong class="prod-review-price">${{ order.total_price }}</strong>
+                                </td>
+                                <td class="border-0 align-middle">
+                                    <strong class="prod-review-quant">{{ order.status }}</strong>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- End -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block scripts %}
+{% endblock %}
+{% endblock %}

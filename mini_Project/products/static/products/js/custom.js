@@ -235,14 +235,51 @@ var itemCount = 0;
             // $('.checkout-btn').css({ "background-color":"#007bff", "border-color":"#007bff"});
         }
     })
-    
+   
+
+      
+
+      
     update_total();
     load_cart();
     checkLoginStatus();
-
+      empty_order_history()
+      
   });
 
+  $(document).ready(function () {
+    // Check if a menu item was previously clicked and apply the 'active' class
+    var activeMenuItem = localStorage.getItem('activeMenuItem');
+    if (activeMenuItem) {
+        $('#' + activeMenuItem).addClass('active');
+    }
+    console.log("HEY IM INSIDE HERE")
+    // Handle click events on menu items
+    $('.menu-btn').click(function (e) {
+        e.preventDefault(); // Prevent the default behavior of the link
+        var clickedMenuItem = $(this).attr('id');
+        
+        // Remove 'active' class from all menu items
+        $('.menu-btn').removeClass('active');
 
+        // // Add 'active' class to the clicked menu item
+        // $(this).addClass('active');
+
+        // Store the clicked menu item in localStorage
+        localStorage.setItem('activeMenuItem', clickedMenuItem);
+        
+        // Redirect to the clicked link
+        window.location.href = $(this).attr('href');
+    });
+});
+
+  
+
+function empty_order_history() {
+    if ($('.order-history-body').children().length === 0) {
+        $('.order-history-body').append(`<td class="empty_history" colspan="5"><h2 class="d-flex justify-content-center font-weight-normal" style="font-family:'Roboto'">You have no orders!</h2></td>`)
+    }
+}
 function isEmpty() {
     console.log("empty? ", $(".cart-body").children().length === 0)
     console.log("body of cart ", $(".cart-body").children())

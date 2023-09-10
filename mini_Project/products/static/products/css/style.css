@@ -4871,3 +4871,54 @@ footer ul.social_icons {
 	margin-top: 35px;
 }
 
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cart-icon a {
+    display: flex;
+    align-items: center;
+}
+
+.cart-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#cart-counter {
+    font-size: 11px;
+    border-radius: 50%;
+    background: #d60b28;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    top: 28px; /* Adjust the top position */
+    right: 19px; /* Adjust the right position */
+}
+
+@media (max-width: 768px) {
+    .cart-icon {
+        order: 1; /* Change the order for responsive design */
+    }
+
+    .menu-btn {
+        order: 2; /* Change the order for responsive design */
+    }
+
+    #cart-counter {
+        top: 28px; /* Adjust the top position for smaller screens */
+        right: 19px; /* Adjust the right position for smaller screens */
+    }
+}
+
+
